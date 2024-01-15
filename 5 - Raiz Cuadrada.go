@@ -2,24 +2,32 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
+// Calcular funcion para calcular la raiz cuadrada por el metodo iteratiro de Heron
 func main() {
 
 	//Definicion de las variables
+	var N float64
 	var x float64
-	var y float64
 
 	//Ingresar los valores
-	fmt.Print("Ingrese el primer valor de X aqui: ")
+	fmt.Print("Ingrese el primer valor de N aqui: ")
+	fmt.Scan(&N)
+	fmt.Print("Ingrese el valor inicial x_0: ")
 	fmt.Scan(&x)
-	fmt.Print("Ingrese el segundo valor de Y aqui: ")
-	fmt.Scan(&y)
+	y := math.Sqrt(N)
 
-	fmt.Println(x - float64(int(x)))
-	fmt.Println(y - float64(int(y)))
-
-	c := [5]int{}
-	fmt.Println(c, "Dato tipo Array")
-
+	e := 10.0
+	tolerancia := 0.00000001
+	for e > tolerancia {
+		x_n := (x + N/x) / 2
+		fmt.Print("Resultado aproximado: ", x_n, " ")
+		e = math.Abs((x - x_n) / x_n)
+		fmt.Println("El error es porcentual es: ", e)
+		x = x_n
+	}
+	fmt.Println("Resultado Real: ", y)
+	fmt.Println("El error Real es: ", y-x)
 }

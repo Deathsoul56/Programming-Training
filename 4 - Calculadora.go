@@ -43,6 +43,11 @@ func raizN(radicando, indice float64) float64 {
 	}
 }
 
+// crear funcion para logaritmo
+func logaritmo(argumento, base float64) float64 {
+	return math.Log(argumento) / math.Log(base)
+}
+
 // crear funcion para modulo
 func modulo(dividendo, divisor int) int {
 	if divisor == 0 {
@@ -50,11 +55,6 @@ func modulo(dividendo, divisor int) int {
 	} else {
 		return dividendo % divisor
 	}
-}
-
-// crear funcion para logaritmo
-func logaritmo(argumento, base float64) float64 {
-	return math.Log(argumento) / math.Log(base)
 }
 
 func main() {
@@ -87,13 +87,13 @@ func main() {
 	//Invoca funcion para la radicacion
 	fmt.Println("La racion Y-ecima de X es: ", raizN(x, y))
 
+	//invocar funcion logaritmo
+	fmt.Println("El logaritmo de X en base Y es: ", logaritmo(x, y))
+
 	//invocar funcion modulo solo si son enteros
 	if x-float64(int(x)) == 0 && y-float64(int(y)) == 0 { //condicion para restar la parte entera de los numeros
 		fmt.Println("X en modulo Y es: ", modulo(int(x), int(y)))
 	} else {
 		fmt.Printf("Los valores no son enteros")
 	}
-
-	//invocar funcion logaritmo
-	fmt.Println("El logaritmo de X en base Y es: ", logaritmo(x, y))
 }
