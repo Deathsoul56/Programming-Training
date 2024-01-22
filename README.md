@@ -1,2 +1,2 @@
-# Go-Training
-Los programas que estaré creando en mi camino de aprender Go
+# Programming-Training
+Los programas que estaré creando para aprender varios lenguajes de programacion
