@@ -1,6 +1,6 @@
 print("Alola mundo Python") #Imprimir un mensaje
 
-#Los comentarios se una linea se hacen con el signo de gato #
+#Los comentarios en python se una linea se hacen con el signo de gato #
 """
 Los comentarios largos de varias lineas 
 se hacen con 3 comillas dobles

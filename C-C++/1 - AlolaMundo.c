@@ -9,6 +9,12 @@ y cerradn con * slash
 */
 
 
+// Definir constantes Globales
+# define val 10
+# define floatVal 4.5
+# define charVal 'G' // Comillas simples
+# define stringVal "ABC Global" // Comillas dobles
+
 // Funcion Principal
 main()
 {
@@ -49,10 +55,103 @@ main()
     printf("int largo unicamente positivo: %lu\n", x3);             // Para imprimir int long unsigned es con %lu
     printf("int largo con valores negativos positivo: %ld\n", x4);  // Para imprimir int long signed es con %lu
 
-    float y; // Para valores decimales
+    float y; // Para valores decimales usa 4 bits en memoria
+    y = 3.141592; //−3.40 × 10^38 a  3.40 × 10^38
+    printf("Punto flotante: %f\n", y); //  Para imprimir float es con %lu
 
-    y = 3.1415;
-    printf("Float: %f\n", y);
+    double d; // Para valores con muchos digitos usa 8 bits en memoria
+    d = 119515613.926535; // −1.79 × 10^308 a 1.79 × 10^308
+    double long d1 = 7984238451891.151619;// −1.18 × 10^4932 a 1.18 × 10^4932
 
-    return 0;
+    printf("Double para numeros con muchos digitos: %lf\n", d);
+    printf("Double largo para mas precision: %Lf\n", d1);
+
+    // Cadenas de caracteres
+    char nombre[] = "Bob Esponja"; // Como definir un caracter pero con []
+    printf("El nombre es: %s\n", nombre); // Para imprimir un string se usa %s
+
+
+    // Constantes (No pueden cambiar su valor)
+    // Locales, solo se pueden usar dentro de una misma funcion
+    const int constanteint = 10;
+    const float constantefloat = 4.5;
+    const char constantechar = 'G';
+    const char constantestring [10] = "ABC Local";
+
+    printf("Constante Local entera: %d\n", constanteint);
+    printf("Constante Local entera: %f\n", constantefloat);
+    printf("Constante Local entera: %c\n", constantechar);
+    printf("Constante Local entera: %s\n", constantestring);
+
+    // Globales, todas las funcion tiene acceso a ellas, se definen afuera del programa
+    printf("Constante Global entera: %d\n", val);
+    printf("Constante Global entera: %f\n", floatVal);
+    printf("Constante Global entera: %c\n", charVal);
+    printf("Constante Global entera: %s\n", stringVal);
+
+
+    // Operadores Logicos
+    printf("Operadores Logicos");
+    int Op1 = 23;
+    int Op2 = 57;
+
+    printf("Es %d > %d: %d (Mayor estricto)\n", Op1, Op2, Op1 > Op2);           // Mayor estricto
+    printf("Es %d < %d: %d (Menor estricto)\n", Op1, Op2, Op1 < Op2);           // Menor estricto
+    printf("Es %d >= 23: %d (Mayor o igual)\n", Op1, Op1 >= 23);                // Mayor o igual
+    printf("Es 44 <= %d: %d (Mayor o igual)\n", Op2, 44 <= Op2);                // Mayor o igual
+    printf("Es %d igual a %d: %d (Igual a)\n", Op1, Op2, Op1 == Op2);           // Igual a
+    printf("Es %d igual a 57: %d (Igual a)\n", Op2, Op2 == 57);                 // Igual a
+    printf("Es %d distinto a %d: %d (Distinto a)\n", Op1, Op2, Op1 != Op2);     // Distinto a
+
+
+    // Cambio de tipo de variable 
+    /*en C las varibles se definen con si tipo y no se pueden cambiar
+    pero si se pueden crear otra variable con el mismo valor pero de otro tipo  */
+
+    int entero = 42;
+    float flotante = entero;  // Conversión implícita de int a float
+    printf("Entero original %d flotante nuevo %f\n", entero, flotante);
+
+    float flotante2 = 3.74;
+    int entero2 = (int)flotante2;  // Conversión explícita de float a int
+    printf("Flotante original %f Entero nuevo %d\n", flotante2, entero2); //Pierdo toda la parte decimal
+
+    int numero = 424123;
+    char cadena[20];  // Tamaño suficiente para almacenar el número como cadena
+
+    // Utilizando sprintf para convertir el número a un String
+    sprintf(cadena, "%d", numero);
+
+    printf("La cadena es: %s\n", cadena); // Imprimiendo la cadena resultante
+
+    // Operaciones Basicas
+    x = 23;
+    y = 2.434;
+
+    // Suma
+    printf("5 + 6 es: %d\n", 5 + 6); // Int + Int = Int
+    printf("33 + %d es: %d\n", x, 33 + x);
+    printf("%d + %f es: %f\n", x, y, x + y); // Int + Float = Float
+    printf("2.8 + 1.4 es: %f\n", 2.8 + 1.4); // Float + Float = Float
+
+    // Resta
+    printf("5 - 6 es: %d\n", 5 - 6); // Int - Int = Int
+    printf("33 - %d es: %d\n", x, 33 - x);
+    printf("%d - %f es: %f\n", x, y, x - y); // Int - Float = Float
+    printf("2.8 - 1.4 es: %f\n", 2.8 - 1.4); // Float - Float = Float
+
+    // Multiplicacion
+    printf("5 * 6 es: %d\n", 5 * 6); // Int * Int = Int
+    printf("33 * %d es: %d\n", x, 33 * x);
+    printf("%d * %f es: %f\n", x, y, x * y); // Int * Float = Float
+    printf("2.8 * 1.4 es: %f\n", 2.8 * 1.4); // Float * Float = Float
+
+    // Division
+    printf("5 / 6 es: %d\n", 5 / 6); // hay que tener cuidado con las divisiones
+    printf("(Int) 33 / %d es: %d\n", x, 33 / x);            // Es importante como defina el resultado
+    printf("(float) 33 / %d es: %f\n", x, (float)33 / x); 
+    printf("%d / %f es: %f\n", x, y, x / y); // Int / Float = Float
+    printf("2.8 / 1.4 es: %f\n", 2.8 / 1.4); // Float / Float = Float
+
+    return 0; // Todo programa en C debe devolver algun valor a menos que se especifique que no devuelve nada
 }
