@@ -1,14 +1,15 @@
-print("Alola mundo Python") #Imprimir un mensaje
+print("Alola mundo Python") # Imprimir un mensaje
 
-#Los comentarios en python se una linea se hacen con el signo de gato #
+# Los comentarios en python se una linea se hacen con el signo de gato #
 """
 Los comentarios largos de varias lineas 
 se hacen con 3 comillas dobles
 """
 
-#Tipos de datos, con el signo = asignamos el valor a una variable
+# Tipos de datos, con el signo = asignamos el valor a una variable
 x = 23                                                      # Int
 y = 2.434                                                   # Float
+z = 3 + 5.5j                                                # Complex
 A = "Cadena 3"                                              # String
 b = True                                                    # Boolean
 list = [1, 2, 3, 'a', 'b']                                  # Lista
@@ -17,11 +18,12 @@ set = {1, 2, 23, x, 3, 3, 4, y, A, 'A', 'A', 'A', 'a'}      # Conjunto (solo apa
 dick = {'Nombre': 'Bob Esponja', 
         'Edad': 25,
         'Cursos': ['Calculo', 'ALgebra', 'Inges']}          # Diccionario
-Nulo = None #esto es un valor nulo
+Nulo = None # Esto es un valor nulo
 
 print("Esto es un entero", x, type(x))
 print("Esto es un flotante", y, type(y))
-print("Esto es un String: " + A, type(A))       #es este caso el signo + se usa para concatenas 2 string
+print("Esto es un complejo", z, type(z))
+print("Esto es un String: " + A, type(A))       # es este caso el signo + se usa para concatenas 2 string
 print("Esto es un Boleano", b, type(b))
 print("Esto es una lista", list, type(list))
 print("Esto es una tupla", tuple, type(tuple))
@@ -29,19 +31,19 @@ print("Esto es un conjunto", set, type(set))
 print("Esto es un diccionario", dick, type(dick))
 print("Esto es un nulo", Nulo, type(Nulo))
 
-#Una variable puede cambiar de tipo (tipado dinamico)
+# Una variable puede cambiar de tipo (tipado dinamico / debilmente tipado)
 A = 2.27
 print(A, type(A))
 
-#Funcion para saber si una variable pertenece a cierto tipo
+# Funcion para saber si una variable pertenece a cierto tipo
 print("A es un floar", isinstance(A, float))
 print("A es un String", isinstance(A, str))
 
-#Python es Case Sensitive, diferencia mayusculas de minusculas
+# Python es Case Sensitive, diferencia mayusculas de minusculas
 X = "73"  #Variable tipo string
 print("esto es x:" , x, "Esto es X: " + X)
 
-#Forma alternativa para insertar un valor numerico dentro de un string
+# Forma alternativa para insertar un valor numerico dentro de un string
 nombre = 'Bob Esponja'
 Edad = 25
 print(f"El alumno {nombre} tiene {Edad} años")
@@ -88,8 +90,8 @@ print(2.8 % 1.4, type(2.8 % 1.4))    #Float % Float = Float
 print(1 + 2, "Suma de adicion")
 print("1" + "2", "Suma de concatenar")
 
-#Operaciones Logicas
-print("Operadores Logicos")
+# Operaciones Comparacion
+print("Operadores de Comparacion")
 Op1 = 23
 Op2 = 57
 
@@ -97,20 +99,23 @@ print(f"Es {Op1} > {Op2}", Op1 > Op2, "Mayor estricto")
 print(f"Es {Op1} < {Op2}",Op1 < Op2, "Menor estricto")
 print(f"Es {Op1} >= 23", Op1 >= 23, "Mayor o igual")
 print(f"Es 44 <= {Op2}", 44 <= Op2, "Mayor o igual")
-print(f"Es {Op1} Igual a {Op2}", Op1 == Op2) #igual a
-print(f"Es {Op2} Igual a 57", Op2 == 57)
-print(f"Es {Op1} distinto a {Op2}", Op1 != Op2) # Distinto a
+print(f"Es {Op1} == {Op2}", Op1 == Op2, "igual a")
+print(f"Es {Op2} == 57", Op2 == 57)
+print(f"Es {Op1} != {Op2}", Op1 != Op2, "Distinto a")
+print(f"Es {Op1} es entero", type(Op1) is int, "Es: ")
+print(f"Es {Op1} no es entero", type(Op1) is not int, "No es: ")
 
-#Algebra Booleana
+# Algebra Booleana
+print("Operaciones Logicas")
 t = True
 f = False
 t2 = True
 
 print("Valor de t", t)
-print("Valor de ~t", not t)
-print("Valor de t ∧ f", t and f)
+print("Valor de ~t", not t)             # Negacion Logica (~)
+print("Valor de t ∧ f", t and f)        # Conjunción lógica (y)
 print("Valor de t ∧ t2", t and t2)
-print("Valor de t ∨ f", t or f)
+print("Valor de t ∨ f", t or f)         # Disyuncion logica (o)
 
 #Cambio de tipo de variable (Type Cast)
 #Transformar una variable a Int
