@@ -96,22 +96,63 @@ print(f'Minimo comun multiplo {lista} = {np.lcm.reduce(lista)}')    # Minimo com
 print(f'maximo comun divisor {lista} = {np.gcd.reduce(lista)}')     # Maximo comun divisor
 
 
-"""" 
-
 # Graficos
-x = np.linspace(- 5, 5, 50)
+# Grafico de una funcion f(x)
+x = np.linspace(- 5, 5, 50) # Crear un vector que empieza en -5, termina en 5 y tiene 50 elementos equidistantes
 y = np.exp(x)
 
-# Crear el gráfico
-plt.plot(x, y, label='exp(x)')
+plt.plot(x, y, label='exp(x)') # Crear el gráfico de una funcion
 
 # Agregar etiquetas y título al gráfico
 plt.xlabel('x')
-plt.ylabel('exp(x)')
+plt.ylabel('Funcion: exp(x)')
 plt.title('Función Exponencial')
 
-# Mostrar la leyenda
-plt.legend()
+plt.xlim(-6, 6) # Limites de visualizacion en X
+plt.ylim(-1, 20 ) # Limites de visualizacion en Y
 
-# Mostrar el gráfico
-plt.show()"""
+plt.legend() # Mostrar la leyenda
+plt.grid() # El grafico tiene cuadriculas   
+
+plt.show() # Mostrar el gráfico
+
+# Grafico de puntos
+x = np.random.randint(-100, 101, size = 50) # Vector de numeros aleatorios entre -100 y 100
+y = np.random.randint(-100, 101, size = 50)
+plt.scatter(x, y, label = 'Datos dispersos')
+plt.xlabel('Valor x')
+plt.ylabel('Valor Y')
+plt.title('Scatterplot')
+
+plt.xlim(-105, 105) 
+plt.ylim(-105, 105 )
+plt.legend()
+plt.grid() 
+
+plt.show() 
+
+# Grafico de Barras
+categorias = np.array(['Rojo', 'Azul', 'Verde', 'Amarillo', 'Blanco'])
+valores = np.array([23, 45, 56, 78, 33])
+colores = np.array(['red', 'green', 'blue', 'orange', 'purple']) # Los colores de las barras se pueden agregan con caracteres 
+colores_hex = np.array(['#FF5733', '#00FF00', '#0000FF', '#FFA500', '#800080']) # O en hexadecimal
+
+plt.bar(categorias, valores, label = 'Preferencias', color = colores_hex) # Crear el gráfico de barras
+
+plt.xlabel('Categorías')
+plt.ylabel('Valores')
+plt.title('Gráfico de barras')
+plt.legend()
+plt.show()
+
+# Histograma
+datos = np.random.randn(1000)  # 1000 puntos de datos distribuidos normalmente
+
+# Crear el histograma
+plt.hist(datos, bins = 30, color='skyblue', edgecolor='black')  # 'bins' controla el número de barras
+
+plt.xlabel('Valor')
+plt.ylabel('Frecuencia')
+plt.title('Histograma de datos aleatorios')
+
+plt.show()
