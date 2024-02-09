@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings" // Importar las librerias
+)
 
 //Los comentarios en Go se una linea se hacen con doble Slash
 
@@ -157,5 +160,55 @@ func main() {
 	fmt.Println("Valor de t ∧ f:", t && f) // Conjunción Lógica (y)
 	fmt.Println("Valor de t ∧ t2:", t && t2)
 	fmt.Println("Valor de t ∨ f:", t || f) // Disyunción Lógica (o)
+
+	// Atajo de operaciones
+	x1 := 14
+	x1 = x + 2 // se asigna el mismo valor + 2
+	x1 += 2    // Atajo de la operaciones anterior
+	fmt.Println(x1)
+
+	// Todas las operaciones basicas tienen su atajo
+	x1 -= 2
+	x1 *= 3
+	x1 /= 3
+	x1 %= 20
+
+	x++ // Incremento en 1
+	x-- // decremento en 1
+
+	// Punteros a memoria
+	var punterox *int = &x // Declarar un puntero con * antes del tipo de variable
+	PunteroX := &x         // Declarar un puntero con la inferencia de tipo
+	fmt.Printf("Valor de x: %d valor del puntero de x: %p\n", x, PunteroX)
+	fmt.Println(punterox)
+
+	// Agregar un valor manualmente
+	var nombre string
+	var edad int
+	fmt.Print("Ingrese su nombre: ") // Go tiene problema leyendo espacios
+	fmt.Scan(&nombre)
+	fmt.Print("Ingrese su edad: ")
+	fmt.Scan(&edad)
+	fmt.Printf("Hola %s su edad es %d años", nombre, edad)
+
+	// Metodos para Strings
+	miString := "cazuEla"
+	fmt.Println(len(miString), "Largo de mi string")
+	fmt.Println(strings.Index(miString, "z"), "Posición de la z en mi string, si se repiten se devuelve la menor posición")
+	fmt.Println(strings.ToUpper(miString), "Todo el string en mayúsculas")
+	fmt.Println(strings.ToLower(miString), "Todo el string en minúsculas")
+	fmt.Println(strings.Contains(miString, "5"), "Devuelve verdadero si es un número, falso en caso contrario")
+	fmt.Println(strings.Count(miString, "a"), "Cuenta todas las 'a' que contiene")
+	fmt.Println(strings.Replace(miString, "z", "ss", -1), "Reemplaza todas las 'z' por 'ss'")
+	fmt.Println(strings.Repeat(miString, 3), "Se imprime el string 3 veces")
+
+	linea1 := "**********************"
+	linea2 := "*                    *"
+	linea3 := "*       Adios!       *"
+	fmt.Println(linea1)
+	fmt.Println(linea2)
+	fmt.Println(linea3)
+	fmt.Println(linea2)
+	fmt.Println(strings.Repeat("*", 22))
 
 }
