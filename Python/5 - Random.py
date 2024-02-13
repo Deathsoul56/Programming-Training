@@ -40,13 +40,13 @@ print(f"Permutación aleatoria: {permutacion}")
 
 # Distribuciones de probabilidad continuas
 # Distribucion Normal
-mu = 5
-sd = 8
-normal = np.random.normal(mu, sd) # Valor aleatorio con distribcion normal (media, Sx)
-print(f'Valor aleatorio con distribucion normal media: {mu} desviacion estandar {sd} = {normal}')
+mu = 5 # Media
+sd = 8 # Desviacion Estandas
+normal = np.random.normal(loc = mu, scale = sd) # Valor aleatorio con distribcion normal (media, Sx)
+print(f'Valor aleatorio con distribucion normal media: {mu} desviacion estandar: {sd} = {normal}')
 
-normal = np.random.normal(mu, sd, 10) # Vector aleatorio con distribcion normal (media, Sx)
-print(f'Vector aleatorio con distribucion normal media: {mu} desviacion estandar {sd} = {normal}')
+normal = np.random.normal(loc = mu, scale = sd, size = 10) # Vector aleatorio con distribcion normal (media, Sx)
+print(f'Vector aleatorio con distribucion normal media: {mu} desviacion estandar: {sd} = {normal}')
 
 # Distribucion normal estandar
 normalS = np.random.standard_normal() # Valor aleatorio con distribcion normal (media = 0, Sx = 1)
@@ -54,3 +54,21 @@ print(f'Valor aleatorio con distribucion normal estandar = {normalS}')
 
 normalS = np.random.standard_normal(10) # Vector aleatorio con distribcion normal (media = 0, Sx = 1)
 print(f'Vector aleatorio con distribucion normal estandar = {normalS}')
+
+# Distribuciones de probabilidad discretas
+# Distribucion Binomial
+N = 10 # Cantidad de intentos
+Prop = 0.25 # Probabilidad de existo
+binomial = np.random.binomial(n = N, p = Prop) # Valor aleatorio con distribcion Binomial (N, Pi)
+print(f'Valor aleatorio con distribucion Binomial Intentos: {N} Probabilidad: {Prop} = {binomial}')
+
+binomial = np.random.binomial(n = N, p = Prop, size = 10) # Vector aleatorio con distribcion binomial (N, Pi)
+print(f'Vector aleatorio con distribucion Binomial Intentos: {N} Probabilidad: {Prop} = {binomial}')
+
+# Distribucion Poisson
+Lambda = 6
+Poisson = np.random.poisson(lam = Lambda) # Valor aleatorio con distribcion Poisson (Lambda)
+print(f'Valor aleatorio con distribucion Poisson Lambda: {Lambda} = {Poisson}')
+
+Poisson = np.random.poisson(lam = Lambda, size = 10) # Vector aleatorio con distribcion Poisson (Lambda)
+print(f'Vector aleatorio con distribucion Poisson Lambda: {Lambda} = {Poisson}')
