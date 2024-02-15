@@ -14,7 +14,7 @@ A = "Cadena 3"                                              # String
 b = True                                                    # Boolean
 list = [1, 2, 3, 'a', 'b']                                  # Lista
 tuple = (1, 2, 3, 'a', 'b')                                 # Tupla
-set = {1, 2, 23, x, 3, 3, 4, y, A, 'A', 'A', 'A', 'a'}      # Conjunto (solo aparecera los elementos 1 sola bez)
+set = {1, 2, 23, x, 3, 3, 4, y, A, 'A', 'A', 'A', 'a'}      # Conjunto (solo aparecera los elementos 1 sola vez)
 dick = {'Nombre': 'Bob Esponja', 
         'Edad': 25,
         'Cursos': ['Calculo', 'ALgebra', 'Inges']}          # Diccionario
@@ -43,50 +43,55 @@ print("A es un String", isinstance(A, str))
 X = "73"  #Variable tipo string
 print("esto es x:" , x, "Esto es X: " + X)
 
-# Forma alternativa para insertar un valor numerico dentro de un string
+# Forma alternativa para imprimir y/o insertar un valor numerico dentro de un string
 nombre = 'Bob Esponja'
 Edad = 25
 print(f"El alumno {nombre} tiene {Edad} años")
 print("El alumno " + nombre + " tiene " + str(Edad) + " años")
 
-#Operaciones Basicas
-#Suma
-print(6 + 5, type(6 + 5))              #Int + Int = Int
+# Representacion de miles
+Millonada = 6_325_412.32563215 # Se pueden escribir _ para separa los miles, el numero se imprimira normal
+Millonada_formateado = "{:,}".format(Millonada)
+print(f'Numero con separador de miles: {Millonada_formateado}')
+
+# Operaciones Basicas
+# Suma
+print(6 + 5, type(6 + 5))              # Int + Int = Int
 print(x + 33, type(x + 33))
-print(x + y, type(x + y))              #Int + Float = Float
-print(2.8 + 1.4, type(2.8 + 1.4))      #Float + Float = Float
+print(x + y, type(x + y))              # Int + Float = Float
+print(2.8 + 1.4, type(2.8 + 1.4))      # Float + Float = Float
 
-#resta
-print(6 - 5, type(6 - 5))              #Int - Int = Int
+# Resta
+print(6 - 5, type(6 - 5))              # Int - Int = Int
 print(x - 33, type(x - 33))
-print(x - y, type(x - y))              #Int - Float = Float
-print(2.8 - 1.4, type(2.8 - 1.4))      #Float - Float = Float
+print(x - y, type(x - y))              # Int - Float = Float
+print(2.8 - 1.4, type(2.8 - 1.4))      # Float - Float = Float
 
-#Multiplicacion
-print(6 * 5, type(6 * 5))              #Int * Int = Int
+# Multiplicacion
+print(6 * 5, type(6 * 5))              # Int * Int = Int
 print(x * 33, type(x * 33))
-print(x * y, type(x * y))              #Int * Float = Float
-print(2.8 * 1.4, type(2.8 * 1.4))      #Float * Float = Float
+print(x * y, type(x * y))              # Int * Float = Float
+print(2.8 * 1.4, type(2.8 * 1.4))      # Float * Float = Float
 
-#Division
-print(5 / 6, type(6 / 5))              #Int / Int = Float
+# Division
+print(5 / 6, type(6 / 5))              # Int / Int = Float
 print(x / 33, type(x / 35))
-print(x / y, type(x / y))              #Int / Float = Float
-print(2.8 / 1.4, type(2.8 / 1.4))      #Float / Float = Float
+print(x / y, type(x / y))              # Int / Float = Float
+print(2.8 / 1.4, type(2.8 / 1.4))      # Float / Float = Float
 
-#Division Entera
-print(5 // 6, type(6 // 5))            #Int // Int = Int
+# Division Entera
+print(5 // 6, type(6 // 5))            # Int // Int = Int
 print(x // 33, type(x // 33))
-print(x // y, type(x // y))            #Int // Float = Float
-print(2.8 // 1.4, type(2.8 // 1.4))    #Float // Float = Float
+print(x // y, type(x // y))            # Int // Float = Float
+print(2.8 // 1.4, type(2.8 // 1.4))    # Float // Float = Float
 
-#Modulo
-print(5 % 6, type(6 % 5))            #Int % Int = Int
+# Modulo
+print(5 % 6, type(6 % 5))            # Int % Int = Int
 print(x % 33, type(x % 33))
-print(x % y, type(x % y))            #Int % Float = Float
-print(2.8 % 1.4, type(2.8 % 1.4))    #Float % Float = Float
+print(x % y, type(x % y))            # Int % Float = Float
+print(2.8 % 1.4, type(2.8 % 1.4))    # Float % Float = Float
 
-#Como vimos el signo + cambio su funcion segun los parametros que entregen
+# Como vimos el signo + cambio su funcion segun los parametros que entregen
 print(1 + 2, "Suma de adicion")
 print("1" + "2", "Suma de concatenar")
 
@@ -117,39 +122,46 @@ print("Valor de t ∧ f", t and f)        # Conjunción lógica (y)
 print("Valor de t ∧ t2", t and t2)
 print("Valor de t ∨ f", t or f)         # Disyuncion logica (o)
 
-#Cambio de tipo de variable (Type Cast)
-#Transformar una variable a Int
+# Cambio de tipo de variable (Type Cast)
+# Transformar una variable a Int
 print("Transformar a Int")
 print("La variable era:", X, "y su tipo:", type(X))
 X = int(X)
-print("La variable es:", X, "y su tipo:", type(X)) #Cuando se aplica a un numero que estaba como string se conversa
+print("La variable es:", X, "y su tipo:", type(X)) # Cuando se aplica a un numero que estaba como string se conversa
 print("La variable era:", y, "y su tipo:", type(y))
-print("La variable es:", int(y), "y su tipo:", type(y)) #Cuando se aplica a un float solo se toma la parte entera
+print("La variable es:", int(y), "y su tipo:", type(y)) # Cuando se aplica a un float solo se toma la parte entera
 
-#transformar una variable a String
+# Transformar una variable a String
 print("Transformar a String")
 print("La variable es:", y, "y su tipo:", type(y))
 y = str(y)
 print("La variable es:", y, "y su tipo:", type(y))
 
-#transformar una variable a Float
+# Transformar una variable a Float
 print("Transformar a Float")
 print("La variable es:", X, "y su tipo:", type(X))
 X = float(X)
 print("La variable es:", X, "y su tipo:", type(X))
 
-#Ingresar un valor de forma manual
+# Ingresar un valor de forma manual
 valor = input("Ingrese su valor aqui: ")
-print("En valor es: ", valor, "Y es de tipo", type(valor))  #Siempre sera un string
+print(f"En valor es: {valor} Y es de tipo {type(valor)}")  # Siempre sera un string
 
-#Incrementar valores
-x = x + 1 #a el valor x se le asigna su sucesor
-x += 1  #Una forma alternativa
+# Incrementar valores
+x = x + 1 # El valor x se le asigna su sucesor
+x += 1  # Forma acortada, todas las operaciones tienen su forma acortada
 
-y = 3 * y
-y *= 3
+# Operaciones Acortadas
+x = 30
+x += 5  # x ahora es 35
+x -= 3  # x ahora es 32
+x *= 2  # x ahora es 64
+x /= 4  # x ahora es 16.0
+x //= 3 # x ahora es 5
+x %= 3  # x ahora es 2
+x **= 3 # x ahora es 8
 
-#Funciones para string
+# Funciones para string
 mi_string = 'cazuEla'
 print(len(mi_string), "Largo de mi string")
 print(mi_string.find('z'), "Posicion de la z en mi string, si se repiten se devuelve la menor posicion") 
