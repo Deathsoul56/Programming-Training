@@ -55,6 +55,50 @@ print(f'Valor aleatorio con distribucion normal estandar = {normalS}')
 normalS = np.random.standard_normal(10) # Vector aleatorio con distribcion normal (media = 0, Sx = 1)
 print(f'Vector aleatorio con distribucion normal estandar = {normalS}')
 
+# Distribucion Uniforme
+Inferior = 2 # Limite Inferior
+Superior = 5 # Limite Superior
+Uniforme = np.random.uniform(low = Inferior, high = Superior) # Valor aleatorio con distribcion Uniforme (a, b)
+print(f'Valor aleatorio con distribucion Uniforme a: {Inferior} b: {Superior} = {Uniforme}')
+
+Uniforme = np.random.uniform(low = Inferior, high = Superior, size = 10) # Vector aleatorio con distribcion Uniforme (a, b)
+print(f'Vector aleatorio con distribucion Uniforme a: {Inferior} b: {Superior} = {Uniforme}')
+
+# Distribucion Triangular
+Inferior = 2 # Limite Inferior
+Moda = 7
+Superior = 10 # Limite Superior
+triangular = np.random.triangular(left = Inferior,mode = Moda, right = Superior) # Valor aleatorio con distribcion Triangular (l, m, u)
+print(f'Valor aleatorio con distribucion Triangular l: {Inferior} m: {Moda} u: {Superior} = {triangular}')
+
+triangular = np.random.triangular(left = Inferior,mode = Moda, right = Superior, size = 10) # Vector aleatorio con distribcion Triangular (l, m, u)
+print(f'Vector aleatorio con distribucion Triangular l: {Inferior} m: {Moda} u: {Superior} = {triangular}')
+
+# Distrivucion Exponencial
+Lambda = 3
+Exponencial = np.random.exponential(scale = Lambda) # Valor aleatorio con distribcion Exponencial (Lambda)
+print(f'Valor aleatorio con distribucion Exponencial Lambda: {Lambda} = {Exponencial}')
+
+Exponencial = np.random.exponential(scale = Lambda, size = 10) # Vector aleatorio con distribcion Exponencial (Lambda)
+print(f'Vector aleatorio con distribucion Exponencial Lambda: {Lambda} = {Exponencial}')
+
+# Distribucion T de Student
+GradosLibertad = 10
+T_Student = np.random.standard_t(df = GradosLibertad) # Valor aleatorio con distribcion T (Nu)
+print(f'Valor aleatorio con distribucion T Nu: {GradosLibertad} = {T_Student}')
+
+T_Student = np.random.standard_t(df = GradosLibertad, size = 10) # Vector aleatorio con distribcion T (Nu)
+print(f'Vector aleatorio con distribucion T Nu: {GradosLibertad} = {T_Student}')
+
+# Distribucion Chi Cuadrado
+GradosLibertad = 10
+Chi_Cuadrado = np.random.chisquare(df = GradosLibertad) # Valor aleatorio con distribcion Chi Cuadrado (Nu)
+print(f'Valor aleatorio con distribucion Chi Cuadrado Nu: {GradosLibertad} = {Chi_Cuadrado}')
+
+Chi_Cuadrado = np.random.chisquare(df = GradosLibertad, size = 10) # Vector aleatorio con distribcion Chi Cuadrado (Nu)
+print(f'Vector aleatorio con distribucion Chi Cuadrado Nu: {GradosLibertad} = {Chi_Cuadrado}')
+
+
 # Distribuciones de probabilidad discretas
 # Distribucion Binomial
 N = 10 # Cantidad de intentos
@@ -72,3 +116,11 @@ print(f'Valor aleatorio con distribucion Poisson Lambda: {Lambda} = {Poisson}')
 
 Poisson = np.random.poisson(lam = Lambda, size = 10) # Vector aleatorio con distribcion Poisson (Lambda)
 print(f'Vector aleatorio con distribucion Poisson Lambda: {Lambda} = {Poisson}')
+
+# Distribucion Geometrica
+Prop = 0.25 # Probabilidad de existo
+Geometrica = np.random.geometric(p = Prop) # Valor aleatorio con distribcion Geometrica (Pi)
+print(f'Valor aleatorio con distribucion Geometrica Probabilidad: {Prop} = {Geometrica}')
+
+Geometrica = np.random.geometric(p = Prop, size = 10) # Vector aleatorio con distribcion Geometrica (Pi)
+print(f'Vector aleatorio con distribucion Geometrica {N} Probabilidad: {Prop} = {Geometrica}')
