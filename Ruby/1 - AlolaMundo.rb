@@ -1,9 +1,9 @@
 puts "Alola Mundo Ruby" # Imprimir un mensaje
 
-# Los comentarios se una linea se hacen con el signo de gato #
+# Los comentarios en ruby de una línea se hacen con el signo de gato #
 
 =begin
-Los comentarios largos de varias lineas 
+Los comentarios largos de varias líneas 
 se indicando el inicio con =begin
 y el final con =end
 =end
@@ -30,19 +30,19 @@ print "Esto es un Nil: " , n, " ", n.class, "\n"
 print "Esto es un Rango: " , range, " ", range.class, "\n"
 print "Esto es un Hash: " , persona, " ", persona.class, "\n"
 
-# Una variable puede cambiar de tipo (tipado dinamico / debilmente tipado)
+# Una variable puede cambiar de tipo (tipado dinámico / débilmente tipado)
 texto = 2.27
 print "Nueva valor de texto: ", texto, " ", texto.class, "\n"
 
-# Funcion para saber si una variable pertenece a cierto tipo
+# Función para saber si una variable pertenece a cierto tipo
 print "A es un float ", texto.is_a?(Float), "\n"
 print "A es un String ", texto.is_a?(String), "\n"
 
-# Ruby es Case Sensitive, diferencia mayusculas de minusculas
+# Ruby es Case Sensitive, diferencia mayúsculas de minúsculas
 X = "73"  # Variable tipo string
 print "esto es x: " , x, " Esto es X: " + X, "\n"
 
-# Forma alternativa para imprimir y/o insertar un valor numerico dentro de un string
+# Forma alternativa para imprimir y/o insertar un valor numérico dentro de un string
 nombre = 'Bob Esponja'
 Edad = 25
 puts "El alumno #{nombre} tiene #{Edad} años"
@@ -50,10 +50,10 @@ print "El alumno " + nombre + " tiene " + String(Edad) + " años", "\n"
 printf("El alumno %s tiene %s años\n", nombre, Edad)
 
 # Representacion de miles
-Millonada = 6_325_412.32563215 # Se pueden escribir _ para separa los miles, el numero se imprimira normal
+Millonada = 6_325_412.32563215 # Se pueden escribir _ para separar los miles, el número se imprimirá normal
 puts "Numero con separador de miles: #{Millonada}"
 
-# Operaciones Basicas
+# Operaciones Básicas
 # Suma
 puts "6 + 5 = #{6 + 5} #{(6 + 5).class}"                 # Int + Int = Int
 puts "#{x} + 33 = #{x + 33} #{(x + 33).class}"
@@ -66,13 +66,13 @@ puts "#{x} - 33 = #{x - 33} #{(x - 33).class}"
 puts "#{x} - #{y} = #{x - y} #{(x - y).class}"           # Int - Float = Float
 puts "2.8 - 1.4 = #{2.8 - 1.4} #{(2.8 - 1.4).class}"  # Float - Float = Float
 
-# Multiplicacion
+# Multiplicación
 puts "6 * 5 = #{6 * 5} #{(6 * 5).class}"                 # Int * Int = Int
 puts "#{x} * 33 = #{x * 33} #{(x * 33).class}"
 puts "#{x} * #{y} = #{x * y} #{(x * y).class}"           # Int * Float = Float
 puts "2.8 * 1.4 = #{2.8 * 1.4} #{(2.8 * 1.4).class}"  # Float * Float = Float
 
-# Division
+# División
 puts "5 / 6 = #{5 / 6} #{(5 / 6).class}"             # Int / Int = Int
 puts "#{x} / 33 = #{x / 33} #{(x / 33).class}"
 puts "#{x} / #{y} = #{x / y} #{(x / y).class}"           # Int / Float = Float
@@ -84,11 +84,15 @@ puts "#{x} % 33 = #{x % 33} #{(x % 33).class}"
 puts "#{x} % #{y} = #{x % y} #{(x % y).class}"        # Int % Float = Float
 puts "#{2.8} % 1.4 = #{2.8 % 1.4} #{(2.8 % 1.4).class}"  # Float % Float = Float
 
-# Hay que tener cuidado operando con float, vemos que aveces hay falta de precicion
-# para asegurarnos que el resultado de una division sera un float podemos forzar 5/2.0
+# Hay que tener cuidado operando con float, vemos que a veces hay falta de precisión
+# para asegurarnos que el resultado de una división será un float podemos forzar 5/2.0
 
-# Operadores Lógicos
-puts "Operadores Lógicos"
+# Como vimos el signo + cambio su función según los parámetros que entreguen
+print 1 + 2, " Suma de adición", "\n"
+print "1" + "2", " Concatenación de cadenas", "\n"
+
+# Operaciones Comparación
+puts "Operadores de Comparación"
 Op1 = 23
 Op2 = 57
 
@@ -108,17 +112,17 @@ f = false
 t2 = true
 
 puts "Valor de t: #{t}"
-puts "Valor de ~t: #{!t}"           # Negacion Logica (~)
-puts "Valor de t ∧ f: #{t && f}"    # Conjunción lógica (y)
+puts "Valor de ~t: #{!t}"           # Negación Lógica (~)
+puts "Valor de t ∧ f: #{t && f}"    # Conjunción Lógica (y)
 puts "Valor de t ∧ t2: #{t && t2}"
-puts "Valor de t ∨ f: #{t || f}"    # Disyuncion logica (o)
+puts "Valor de t ∨ f: #{t || f}"    # Disyunción Lógica (o)
 
 # Cambio de tipo de variable (Type Cast)
 # Transformar una variable a Int
 puts "Transformar a Int"
 puts "La variable era: #{X} y su tipo: #{X.class}"
 X = X.to_i
-puts "La variable es: #{X} y su tipo: #{X.class}" # Cuando se aplica a un numero que estaba como string se conversa
+puts "La variable es: #{X} y su tipo: #{X.class}" # Cuando se aplica a un numero que estaba como string se conserva
 puts "La variable era: #{y} y su tipo: #{y.class}"
 puts "La variable es: #{y.to_i} y su tipo: #{(y.to_i).class}" # Cuando se aplica a un float solo se toma la parte entera
 
@@ -157,13 +161,13 @@ x **= 3 # x ahora es 8
 # Funciones para string
 mi_string = 'cazuEla'
 puts "#{mi_string.length} Largo de mi string"
-puts "#{mi_string.index('z')} Posicion de la z en mi string, si se repiten se devuelve la menor posicion"
-puts "#{mi_string.capitalize} Primer caracter en mayusculas"
-puts "#{mi_string.upcase} Todo el string en mayusculas"
-puts "#{mi_string.downcase} Todo el string en minusculas"
-puts "#{mi_string.match?(/\A\d+\z/)} Devulve verdadero si es un numero, falso en caso contrario"
-puts "#{mi_string.match?(/\A[a-zA-Z]+\z/)} Devulve verdadero si el string solo contiene letras, falso en caso contrario"
-puts "#{mi_string.match?(/\A\w+\z/)} Devulve verdadero si el string solo contiene alpha numericos, falso en caso contrario"
+puts "#{mi_string.index('z')} Posición de la z en mi string, si se repiten se devuelve la menor posición"
+puts "#{mi_string.capitalize} Primer carácter en mayúsculas"
+puts "#{mi_string.upcase} Todo el string en mayúsculas"
+puts "#{mi_string.downcase} Todo el string en minúsculas"
+puts "#{mi_string.match?(/\A\d+\z/)} Devuelve verdadero si es un número, falso en caso contrario"
+puts "#{mi_string.match?(/\A[a-zA-Z]+\z/)} Devuelve verdadero si el string solo contiene letras, falso en caso contrario"
+puts "#{mi_string.match?(/\A\w+\z/)} Devuelve verdadero si el string solo contiene alpha numéricos, falso en caso contrario"
 puts "#{mi_string.count('a')} Cuanta todas las a que contiene"
 puts "#{mi_string.gsub('z', 'ss')} Remplaza todas las z por ss"
 puts "#{mi_string * 3} Se imprime el string 3 veces"
