@@ -1,7 +1,6 @@
 # Si condicional
 
-#x = int(input("Ingrese un valor aqui: "))
-x=13
+x = 13
 
 if x % 2 == 0:                       # Si Condicion a cumplir
     print(f"El numero {x} es par")   # Valor si es verdadero
