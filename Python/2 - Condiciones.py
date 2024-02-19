@@ -1,4 +1,4 @@
-#Si condicional
+# Si condicional
 
 #x = int(input("Ingrese un valor aqui: "))
 x=13
@@ -8,10 +8,10 @@ if x % 2 == 0:                       # Si Condicion a cumplir
 else:                                # En caso contrario
     print(f"El numero {x} es impar") # Calor si es falso
 
-#Forma alternativa
+# Forma alternativa
 print(f"{x} es par") if x % 2 == 0 else print(f"{x} es impar")
 
-#Mas de 1 condicion
+# Mas de 1 condicion
 if x % 3 == 0:                                              # Si condicion a cumplir
     print(f"El valor {x} es equivalente a 0 en modulo 3")   # Valor si es verdadero
 elif x % 3 == 1:                                            # Pero si segunda condicion
@@ -19,9 +19,33 @@ elif x % 3 == 1:                                            # Pero si segunda co
 else:                                                       # En caso contrario
     print(f"El valor {x} es equivalente a 2 en modulo 3")   # Valor si no cumple ninguna condicion
 
+# If anidados
+x = 10
+y = 5
+
+if x > y:
+    print("x es mayor que y")
+    if x % 2 == 0:
+        print("x es par")
+    else:
+        print("x es impar")
+else:
+    print("x es menor o igual que y")
+
+# If con operadores logicos
+x = 10
+y = 5
+z = 15
+
+if x > y and x < z:
+    print("x es mayor que y y menor que z")
+elif x < y or x < z:
+    print("x es menor que y o menor que z")
+else:
+    print("ninguna condición se cumple")
 
 
-#Condicion de Intentar
+# Condicion de Intentar
 n1 = 10
 n2 = 3
 
