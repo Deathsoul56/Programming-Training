@@ -1,19 +1,43 @@
-#Ciclos
+# Ciclos
 
-#Tipos While
+# Tipos While
 x = -3
 while x <= 10:
-    print(x)
+    print(f"Valor de x = {x}")
     x += 1
 
-#Ciclos for
+y = 0
+while True: # while infinito
+    y += 1
+    if y == 5:
+        print("Se rompio el ciclo")
+        break # Romper el ciclo
+    else:
+        print("Ciclo infinito")
 
-#Avanzar por un rango
-for i in range(5+1): #Ciclo for imprime hasta n-1
-    print(i)
+# Ciclos for
 
+# Avanzar por un rango
+for i in range(5+1): #Ciclo for imprime de 0 hasta n-1
+    print(f"Valor de i = {i}")
 
-#avanzar por una lista
-list = ['a', 'c', 'g', 'lamda', '7']
+# Avanzar por una lista
+list = ['a', 'c', 7, 3.1415, True, 'lamda']
 for i in list:
-    print(i)
+    print(f"en elemento {list.index(i)} de la lista es = {i} de tipo =  {type(i)}")
+
+# Ciclos Anidados
+numeros = [1, 2, 3]
+letras = ['a', 'b', 'c']
+
+for numero in numeros:
+    for letra in letras:
+        print(numero, letra)
+
+# Recorrer una matriz
+matriz = [[4, 7, 9, 3], [2, 4, 6, 1]]
+print(f"La matriz original: {matriz}")
+for i in matriz:
+    print(f"Valor {matriz.index(i)} es: {i}")
+    for j in i:
+        print(f"Es valor {i.index(j)} es: {j}")
