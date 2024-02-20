@@ -102,7 +102,7 @@ func main() {
 
 	fmt.Println("Mapa completo:", mapa) // Imprimir el mapa completo
 
-	// Una variable NO puede cambiar de tipo (tipado estatido / fuertemente tipado)
+	// Una variable NO puede cambiar de tipo (tipado estatido)
 	// Go es Case Sensitive, distinge entre mayusculas y minusculas
 	m := 133
 	M := "Alola 654"

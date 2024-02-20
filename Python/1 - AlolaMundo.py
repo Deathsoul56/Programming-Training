@@ -31,7 +31,7 @@ print("Esto es un conjunto", set, type(set))
 print("Esto es un diccionario", dick, type(dick))
 print("Esto es un nulo", Nulo, type(Nulo))
 
-# Una variable puede cambiar de tipo (tipado dinámico / débilmente tipado)
+# Una variable puede cambiar de tipo (tipado dinámico)
 A = 2.27
 print(A, type(A))
 

@@ -30,7 +30,7 @@ print "Esto es un Nil: " , n, " ", n.class, "\n"
 print "Esto es un Rango: " , range, " ", range.class, "\n"
 print "Esto es un Hash: " , persona, " ", persona.class, "\n"
 
-# Una variable puede cambiar de tipo (tipado dinámico / débilmente tipado)
+# Una variable puede cambiar de tipo (tipado dinámico)
 texto = 2.27
 print "Nueva valor de texto: ", texto, " ", texto.class, "\n"
 
