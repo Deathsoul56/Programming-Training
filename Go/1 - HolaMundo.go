@@ -1,8 +1,13 @@
+//go:build ignore
+// +build ignore
+
 package main
 
+// Importar las librerias
 import (
-	"fmt"
-	"strings" // Importar las librerias
+	"fmt"     // Libreria con metodos escenciales
+	"reflect" // Libreria para comprar el tipo de dato
+	"strings" // Librerias para metodos de string
 )
 
 //Los comentarios en Go se una linea se hacen con doble Slash
@@ -83,6 +88,7 @@ func main() {
 	var x8 int8 = -8 // Entero de 8 bits
 	var ux8 uint = 8 // Entero positivo, los otros datos numericos tambien pueden ser solo positivo
 
+	// Forma alternativa de imprimir
 	fmt.Println("Entero pequeño:", x8, "entero no negativo:", ux8)      // Puede imprimir separando los elemetos con comas
 	fmt.Printf("Entero pequeño: %d entero no negativo: %d \n", x8, ux8) // puedo imprimir escribiendo todo el texto y especificando el tipo de variable
 
@@ -96,24 +102,20 @@ func main() {
 
 	fmt.Println("Mapa completo:", mapa) // Imprimir el mapa completo
 
+	// Una variable NO puede cambiar de tipo (tipado estatido / fuertemente tipado)
 	// Go es Case Sensitive, distinge entre mayusculas y minusculas
 	m := 133
 	M := "Alola 654"
 	fmt.Printf("Valor de m = %d distinto al el valor de M = %s\n", m, M)
 
-	// Constante, son variable que no puede, estas puede no ser usada y el programa aun asi funcionara
+	// Constante, son variable que no puede cambiar su valor, estas puede no ser usada y el programa aun asi funcionara
 	const C = "Valor de una constante"
 	const Pi = 3.141592
 
-	// Transformacion de Variable (Casting), como Go es fuertemente tipado para cambiar el tipo de variable debe ser en una nueva variable
-	EntradaInt := 195
-	EntradaFloat := 3.56
-
-	SalidaFloat := float32(EntradaInt) // Conversion de entero a flotante
-	SalidaInt := int(EntradaFloat)     // Conversion de flotante a entero
-
-	fmt.Printf("viaje variable entera: %d Nueva variable flotante: %f\n", EntradaInt, SalidaFloat)
-	fmt.Printf("viaje variable flotante: %f Nueva variable entera: %d\n", EntradaFloat, SalidaInt) // Se pierde toda la parte decimal
+	// Función para saber si una variable pertenece a cierto tipo
+	A := 3.14
+	fmt.Println("A es un float:", reflect.TypeOf(A).Kind() == reflect.Float64)
+	fmt.Println("A es un string:", reflect.TypeOf(A).Kind() == reflect.String)
 
 	// Operaciones en Go
 	/* Si se operan variable de distinto bits el resultado tendra la cantidad de bits mayor (int8 + int16 = int16)
@@ -175,6 +177,16 @@ func main() {
 
 	x++ // Incremento en 1
 	x-- // decremento en 1
+
+	// Transformacion de Variable (Casting), como Go es fuertemente tipado para cambiar el tipo de variable debe ser en una nueva variable
+	EntradaInt := 195
+	EntradaFloat := 3.56
+
+	SalidaFloat := float32(EntradaInt) // Conversion de entero a flotante
+	SalidaInt := int(EntradaFloat)     // Conversion de flotante a entero
+
+	fmt.Printf("viaje variable entera: %d Nueva variable flotante: %f\n", EntradaInt, SalidaFloat)
+	fmt.Printf("viaje variable flotante: %f Nueva variable entera: %d\n", EntradaFloat, SalidaInt) // Se pierde toda la parte decimal
 
 	// Punteros a memoria
 	var punterox *int = &x // Declarar un puntero con * antes del tipo de variable
