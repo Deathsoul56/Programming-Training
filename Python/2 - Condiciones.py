@@ -37,9 +37,11 @@ y = 5
 z = 15
 
 if x > y and x < z:
-    print("x es mayor que y y menor que z")
-elif x < y or x < z:
-    print("x es menor que y o menor que z")
+    print("x es mayor que y pero menor que z")
+elif x > y and x > z:
+    print("x es mayor que z e y")
+elif x < y and x < z:
+    print("x es menor que z e y")
 else:
     print("ninguna condición se cumple")
 

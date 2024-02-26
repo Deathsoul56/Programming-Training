@@ -44,9 +44,11 @@ func main() {
 	z := 15
 
 	if x > y && x < z {
-		fmt.Println("x es mayor que y y menor que z")
-	} else if x < y || x < z {
-		fmt.Println("x es menor que y o menor que z")
+		fmt.Println("x es mayor que y pero menor que z")
+	} else if x > y && x > z {
+		fmt.Println("x es mayor que z e y")
+	} else if x < y && x < z {
+		fmt.Println("x es menor que z e y")
 	} else {
 		fmt.Println("ninguna condición se cumple")
 	}

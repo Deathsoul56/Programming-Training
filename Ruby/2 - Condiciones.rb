@@ -40,12 +40,15 @@ y = 5
 z = 15
 
 if x > y && x < z
-  puts "x es mayor que y y menor que z"
-elsif x < y || x < z
-  puts "x es menor que y o menor que z"
+  puts "x es mayor que y pero menor que z"
+elsif x > y && x > z
+  puts "x es mayor que z e y"
+elsif x < y && x < z
+  puts "x es menor que z e y"
 else
   puts "ninguna condición se cumple"
 end
+
 
 # Condicion de Intentar
 n1 = 10
