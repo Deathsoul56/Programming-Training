@@ -21,6 +21,9 @@ while True: # while infinito
 for i in range(5+1): #Ciclo for imprime de 0 hasta n-1
     print(f"Valor de i = {i}")
 
+for j in range(-5, 7): # Imprime de -5 hasta 3 el intervalor es semi cerrado [-5, 4)
+    print(f"Valor de j = {j}")
+
 # Avanzar por una lista
 list = ['a', 'c', 7, 3.1415, True, 'lamda']
 for i in list:
