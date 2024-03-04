@@ -18,6 +18,8 @@ z <- 2 +3i # Complex para números complejos
 A <- "Cadena 3" # Character 
 b <- TRUE # Logical para los booleanos
 f <- as.Date("2024-01-28") # Date para las fechas
+v <- c(5, 23, 73, 21, 3.14) # Vector
+lista <- list(1, "dos", 3, "cuatro", 5) # Array para arreglos
 infinito <- Inf # Infinito
 infinitom <- -Inf # Infinito Negativo
 Nonumero <- NaN
@@ -28,14 +30,16 @@ cat("Esto es un Numeric Decimal:", y, class(y), typeof(y))
 cat("Esto es un Complex:", z, class(z), typeof(z))
 cat("Esto es un Character:", A, class(A), typeof(A))
 cat("Esto es un Logical:", b, class(b), typeof(b))
+cat("Esto es un Vector:", v, class(v), typeof(v))
 cat("Esto es un Date:", format(f, "%Y-%m-%d"), class(f), typeof(f))
+cat("Esto es un Array:", paste(lista, collapse = ", "), class(lista), typeof(lista))
 cat("Esto es un Numeric Entero:", infinito, class(infinito), typeof(infinito))
 cat("Esto es un Numeric Entero:", Nonumero, class(Nonumero), typeof(Nonumero))
 
 # En R un valor individual se puede imprimir simplemente escribiéndolo
 x
 
-# Una variable puede cambiar de tipo (tipado dinámico / débilmente tipado)
+# Una variable puede cambiar de tipo (tipado dinámico)
 A <- 2.27
 cat(A, typeof(A))
 
@@ -54,7 +58,7 @@ Edad <- 25
 cat("El alumno", nombre, "tiene", Edad, "años")
 cat(sprintf("El alumno %s tiene %d años\n", nombre, Edad))
 
-# En R existe una función para concatenar valores
+# En R existe una funciï¿½n para concatenar valores
 valor1 <- "Alola"
 valor2 <- "mundo"
 valorc <- paste(valor1, valor2)
@@ -89,11 +93,11 @@ x %/% y
 x %% y
 10 %% 3
 
-# Operaciones Comparación
+# Operaciones de Comparación
 Op1 <- 23
 Op2 <- 57
 
-cat("Operadores de Comparación\n")
+cat("Operadores de Comparaciï¿½n\n")
 cat(sprintf("Es %d > %d: %s Mayor estricto\n", Op1, Op2, Op1 > Op2))
 cat(sprintf("Es %d < %d: %s Menor estricto\n", Op1, Op2, Op1 < Op2))
 cat(sprintf("Es %d >= 23: %s Mayor o igual\n", Op1, Op1 >= 23))
@@ -111,10 +115,10 @@ t2 <- TRUE
 
 cat("Operaciones Lógicas\n")
 cat("Valor de t:", t, "\n")
-cat("Valor de !t:", !t, "\n")            # Negacion Logica (!)
-cat("Valor de t & f:", t & f, "\n")      # Conjunción lógica (y)
+cat("Valor de !t:", !t, "\n")            # Negación Lógica (!)
+cat("Valor de t & f:", t & f, "\n")      # Conjunción Lógica (y)
 cat("Valor de t & t2:", t & t2, "\n")
-cat("Valor de t | f:", t | f, "\n")      # Disyuncion logica (o)
+cat("Valor de t | f:", t | f, "\n")      # Disyunción Lógica (o)
 
 # Cambio de tipo de variable (Type Cast)
 # Transformar una variable a Int
@@ -139,20 +143,26 @@ X <- as.double(X)
 cat("La variable es:", X, "y su tipo:", class(X), "\n")
 
 # Ingresar un valor de forma manual
-valor <- readline("Ingrese su valor aquí: ")
+valor <- readline("Ingrese su valor aquï¿½: ")
 cat(sprintf("El valor es: %s y es de tipo %s\n", valor, class(valor)))
 
 # Funciones para string
 mi_string <- 'cazuEla'
 cat(nchar(mi_string), "Largo de mi string\n") # Longitud del string
-cat(regexpr('z', mi_string)[1], "Posición de la z en mi string\n") # Encontrar posición de un substring
+cat(regexpr('z', mi_string)[1], "Posiciï¿½n de la z en mi string\n") # Encontrar posición de un substring
 cat(toupper(substr(mi_string, 1, 1)), substr(mi_string, 2, nchar(mi_string)), "\n") # Capitalizar la primera letra
 cat(toupper(mi_string), "\n") # Convertir a mayúsculas
 cat(tolower(mi_string), "\n") # Convertir a minúsculas
-cat(grepl("^[0-9]+$", mi_string), "Devuelve verdadero si es un número\n") # Verificar si es un número
+cat(grepl("^[0-9]+$", mi_string), "Devuelve verdadero si es un número\n") # Verificar si es un nï¿½mero
 cat(grepl("^[A-Za-z]+$", mi_string), "Devuelve verdadero si solo contiene letras\n") # Verificar si solo contiene letras
 cat(grepl("^[A-Za-z0-9]+$", mi_string), "Devuelve verdadero si solo contiene letras y números\n") # Verificar si solo contiene letras y números
 cat(length(gregexpr('a', mi_string)[[1]]), "Cuenta todas las a que contiene\n") # Contar ocurrencias de un substring
 cat(gsub('z', 'ss', mi_string), "Reemplaza todas las z por ss\n") # Reemplazar un substring
 cat(rep(mi_string, 3), "Se imprime el string 3 veces\n") # Repetir el string
+
+linea1 <- " **********************"
+linea2 <- "*                    *"
+linea3 <- "*       Adios!       *"
+
+cat(linea1, "\n", linea2, "\n", linea3, "\n", linea2, "\n", rep("*", 12))
 

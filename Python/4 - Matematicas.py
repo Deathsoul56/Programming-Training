@@ -20,7 +20,7 @@ z = 3 + 4j
 # Operaciones
 print(f"{x} + {y} = {x + y}")          # Suma
 print(f"{x} - {y} = {x - y}")          # Resta
-print(f"{x} * {y} = {x * y}")          # multiplicacion
+print(f"{x} * {y} = {x * y}")          # Multiplicacion
 print(f"{x} / {y} = {x / y}")          # Division
 print(f"{x} // 9 = {x // 9}")          # Division entera
 print(f"{x} % 9 = {x % 9}")            # Modulo
@@ -35,7 +35,6 @@ print(f"|{z}| = {np.abs(z)}")          # Modulo Numero complejo
 print(f'Arg({z}) = {np.angle(z)}')     # Argumento de un complejo
 print(f'{z}* = {np.conj(z)}')          # Conjugado
 
-
 # Funciones matematicas
 print(f"e^2 = {np.exp(2)}")                  # Funcinoes exponencial
 print(f"Ln({x}) = {np.log(x)}")              # Logaritmo Natural
@@ -43,8 +42,6 @@ print(f"Log_7({x}) = {np.emath.logn(7, x)}") # Logaritmo cualquier base (base, a
 print(f"floor({y}) = {np.floor(y)}")         # Funciones Piso
 print(f"Ceil({y}) = {np.ceil(y)}")           # Funciones Cielo
 print(f'√(5^2+12^2) = {np.hypot(5, 12)}')    # Hipotenusa
-
-
 
 #Funciones Trigonometricas (Por defecto estan en Radianes)
 print(f"sin(π/6) = {np.sin(Pi/6)}")         # Funcion Seno
@@ -72,9 +69,9 @@ print(f"csch(3) = {1 / np.sinh(3)}")    # Funcion Cosecante Hiporbolico
 print(f"cotanh(3) = {1 / np.tanh(3)}")  # Funcion Cotangente Hiporbolico
 
 # Funciones Hiporbolicas Inversas
-print(f"sinh(5) = {np.arcsinh(5)}")     # Funcion ArcoSeno Hiporbolico
-print(f"cosh(5) = {np.arccosh(5)}")     # Funcion ArcoCoseno Hiporbolico
-print(f"tanh(1/2) = {np.arctanh(1/2)}") # Funcion ArcoTangente Hiporbolico
+print(f"Arcosinh(5) = {np.arcsinh(5)}")     # Funcion ArcoSeno Hiporbolico
+print(f"Arcocosh(5) = {np.arccosh(5)}")     # Funcion ArcoCoseno Hiporbolico
+print(f"Arcotanh(1/2) = {np.arctanh(1/2)}") # Funcion ArcoTangente Hiporbolico
 
 # Funciones inversas restante
 """
@@ -84,17 +81,16 @@ sec(θ) = x
 cos(θ) = 1 / x
 θ = arccos(1/x)
 """
-print(f"arcsec(5) = {np.arccos(1 / 5)}")            # Funcion ArcoSecante
-print(f"arccsc(5) = {np.arcsin(1 / 5)}")            # Funcion ArcoCosecante
-print(f"arccotg(5) = {np.arctan(1 / 5)}")           # Funcion ArcoCotangente
-print(f"arcsech(1/2) = {np.arccosh(1 / (1/2))}")    # Funcion ArcoSecante Hiporbolico
-print(f"arccsch(5) = {np.arcsinh(1 / 5)}")          # Funcion ArcoCosecante Hiporbolico
-print(f"arccotanh(5) = {np.arctanh(1 / 5)}")        # Funcion ArcoCotangente Hiporbolico
+print(f"Arcsec(5) = {np.arccos(1 / 5)}")            # Funcion ArcoSecante
+print(f"Arccsc(5) = {np.arcsin(1 / 5)}")            # Funcion ArcoCosecante
+print(f"Arccotg(5) = {np.arctan(1 / 5)}")           # Funcion ArcoCotangente
+print(f"Arcsech(1/2) = {np.arccosh(1 / (1/2))}")    # Funcion ArcoSecante Hiporbolico
+print(f"Arccsch(5) = {np.arcsinh(1 / 5)}")          # Funcion ArcoCosecante Hiporbolico
+print(f"Arccotanh(5) = {np.arctanh(1 / 5)}")        # Funcion ArcoCotangente Hiporbolico
 
 lista = np.array([12, 24, 8])
 print(f'Minimo comun multiplo {lista} = {np.lcm.reduce(lista)}')    # Minimo comun multiplo
-print(f'maximo comun divisor {lista} = {np.gcd.reduce(lista)}')     # Maximo comun divisor
-
+print(f'Maximo comun divisor {lista} = {np.gcd.reduce(lista)}')     # Maximo comun divisor
 
 # Graficos
 # Grafico de una funcion f(x)
