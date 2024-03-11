@@ -55,6 +55,15 @@ print(f'Valor aleatorio con distribucion normal estandar = {normalS}')
 normalS = np.random.standard_normal(10) # Vector aleatorio con distribcion normal (media = 0, Sx = 1)
 print(f'Vector aleatorio con distribucion normal estandar = {normalS}')
 
+# Distribucion Log-Normal
+mu_x = 1 # Parametro Posicion
+sd_x = 2 # Parametro Forma
+lognormal = np.random.lognormal(mean = mu, sigma = sd) # Valor aleatorio con distribcion Log-normal (Mu, Sigma)
+print(f'Valor aleatorio con distribucion log-normal posicion: {mu_x} forma: {sd_x} = {lognormal}')
+
+lognormal = np.random.lognormal(mean = mu, sigma = sd, size = 10) # Vector aleatorio con distribcion Log-normal (Mu, Sigma)
+print(f'Vector aleatorio con distribucion log-normal posicion: {mu_x} forma: {sd_x} = {lognormal}')
+
 # Distribucion Uniforme
 Inferior = 2 # Limite Inferior
 Superior = 5 # Limite Superior
@@ -98,6 +107,15 @@ print(f'Valor aleatorio con distribucion Chi Cuadrado Nu: {GradosLibertad} = {Ch
 Chi_Cuadrado = np.random.chisquare(df = GradosLibertad, size = 10) # Vector aleatorio con distribcion Chi Cuadrado (Nu)
 print(f'Vector aleatorio con distribucion Chi Cuadrado Nu: {GradosLibertad} = {Chi_Cuadrado}')
 
+# Distribucion F de Fisher
+GradosLibertad1 = 12
+GradosLibertad2 = 17
+F_Fisher = np.random.f(dfnum = GradosLibertad1, dfden = GradosLibertad2) # Valor aleatorio con distribcion F de Fisher (Nu_1m Nu_2)
+print(f'Valor aleatorio con distribucion F de Fisher Nu_1: {GradosLibertad1} Nu_2: {GradosLibertad2} = {F_Fisher}')
+
+F_Fisher = np.random.f(dfnum = GradosLibertad1, dfden = GradosLibertad2, size = 10) # Vector aleatorio con distribcion F de Fisher (Nu_1, Nu_2)
+print(f'Vector aleatorio con distribucion F de Fisher Nu_1: {GradosLibertad1} Nu_2: {GradosLibertad2} = {F_Fisher}')
+
 
 # Distribuciones de probabilidad discretas
 # Distribucion Binomial
@@ -123,4 +141,18 @@ Geometrica = np.random.geometric(p = Prop) # Valor aleatorio con distribcion Geo
 print(f'Valor aleatorio con distribucion Geometrica Probabilidad: {Prop} = {Geometrica}')
 
 Geometrica = np.random.geometric(p = Prop, size = 10) # Vector aleatorio con distribcion Geometrica (Pi)
-print(f'Vector aleatorio con distribucion Geometrica {N} Probabilidad: {Prop} = {Geometrica}')
+print(f'Vector aleatorio con distribucion Geometrica Probabilidad: {Prop} = {Geometrica}')
+
+
+# Distribucion Hyper-Geometrica
+Poblatcion = 20 # N
+Categoria = 9 # K
+muestra = 4 # n
+
+# Valor aleatorio con distribcion Hyper-Geometrica (N, K, n)
+HiperGeo = np.random.hypergeometric(ngood = Poblatcion, nbad = Categoria, nsample = muestra) 
+print(f'Valor aleatorio con distribucion Hyper-Geometrica Poblacion: {Poblatcion} Categoria: {Categoria} muestra: {muestra} = {HiperGeo}')
+
+# Vector aleatorio con distribcion Hyper-Geometrica (N, K, n)
+HiperGeo = np.random.hypergeometric(ngood = Poblatcion, nbad = Categoria, nsample = muestra, size = 10) 
+print(f'Vector aleatorio con distribucion Hyper-Geometrica Poblacion: {Poblatcion} Categoria: {Categoria} muestra: {muestra} = {HiperGeo}')
