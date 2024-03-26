@@ -116,6 +116,16 @@ print(f'Valor aleatorio con distribucion F de Fisher Nu_1: {GradosLibertad1} Nu_
 F_Fisher = np.random.f(dfnum = GradosLibertad1, dfden = GradosLibertad2, size = 10) # Vector aleatorio con distribcion F de Fisher (Nu_1, Nu_2)
 print(f'Vector aleatorio con distribucion F de Fisher Nu_1: {GradosLibertad1} Nu_2: {GradosLibertad2} = {F_Fisher}')
 
+# Distribucion Gamma
+alpha = 12
+Lambda = 17
+Gamma = np.random.gamma(shape = alpha, scale = Lambda) # Valor aleatorio con distribcion Gamma (Alpha, Lambda)
+print(f'Valor aleatorio con distribucion Gamma Alpha: {alpha} Lambda: {Lambda} = {Gamma}')
+
+Gamma = np.random.gamma(shape = alpha, scale = Lambda, size = 10) # Vector aleatorio con distribcion Gamma (Alpha, Lambda)
+print(f'Vector aleatorio con distribucion Gamma Alpha: {alpha} Lambda: {Lambda} = {Gamma}')
+
+
 
 # Distribuciones de probabilidad discretas
 # Distribucion Binomial
