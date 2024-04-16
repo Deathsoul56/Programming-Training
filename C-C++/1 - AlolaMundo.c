@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-//Los comentarios en C y C++ se una linea se hacen con el signo de gato #
+//Los comentarios en C y C++ se una linea se hacen con doble Slash
 
 /*
 Los comentarios largos de varias lineas 
@@ -152,6 +152,16 @@ main()
     printf("(float) 33 / %d es: %f\n", x, (float)33 / x); 
     printf("%d / %f es: %f\n", x, y, x / y); // Int / Float = Float
     printf("2.8 / 1.4 es: %f\n", 2.8 / 1.4); // Float / Float = Float
+
+    char linea1[] = "**********************";
+    char linea2[] = "*                    *";
+    char linea3[] = "*       Adios!       *";
+    
+    printf("%s\n", linea1);
+    printf("%s\n", linea2);
+    printf("%s\n", linea3);
+    printf("%s\n", linea2);
+    printf("%s\n", linea1);
 
     return 0; // Todo programa en C debe devolver algun valor a menos que se especifique que no devuelve nada
 }
