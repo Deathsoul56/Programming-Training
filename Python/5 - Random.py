@@ -83,13 +83,21 @@ print(f'Valor aleatorio con distribucion Triangular l: {Inferior} m: {Moda} u: {
 triangular = np.random.triangular(left = Inferior,mode = Moda, right = Superior, size = 10) # Vector aleatorio con distribcion Triangular (l, m, u)
 print(f'Vector aleatorio con distribucion Triangular l: {Inferior} m: {Moda} u: {Superior} = {triangular}')
 
-# Distrivucion Exponencial
+# Distribucion Exponencial
 Lambda = 3
 Exponencial = np.random.exponential(scale = Lambda) # Valor aleatorio con distribcion Exponencial (Lambda)
 print(f'Valor aleatorio con distribucion Exponencial Lambda: {Lambda} = {Exponencial}')
 
 Exponencial = np.random.exponential(scale = Lambda, size = 10) # Vector aleatorio con distribcion Exponencial (Lambda)
 print(f'Vector aleatorio con distribucion Exponencial Lambda: {Lambda} = {Exponencial}')
+
+# Distribucion Rayleigh 
+Sigma = 2.5
+Rayleigh = np.random.rayleigh(scale = Sigma) # Valor aleatorio con distribcion Rayleigh (Sigma)
+print(f'Valor aleatorio con distribucion Exponencial Lambda: {Sigma} = {Rayleigh}')
+
+Rayleigh = np.random.exporayleighnential(scale = Sigma, size = 10) # Vector aleatorio con distribcion Rayleigh (Sigma)
+print(f'Vector aleatorio con distribucion Exponencial Lambda: {Sigma} = {Rayleigh}')
 
 # Distribucion T de Student
 GradosLibertad = 10
@@ -124,7 +132,6 @@ print(f'Valor aleatorio con distribucion Gamma Alpha: {alpha} Lambda: {Lambda} =
 
 Gamma = np.random.gamma(shape = alpha, scale = Lambda, size = 10) # Vector aleatorio con distribcion Gamma (Alpha, Lambda)
 print(f'Vector aleatorio con distribucion Gamma Alpha: {alpha} Lambda: {Lambda} = {Gamma}')
-
 
 
 # Distribuciones de probabilidad discretas
