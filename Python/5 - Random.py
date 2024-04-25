@@ -94,10 +94,10 @@ print(f'Vector aleatorio con distribucion Exponencial Lambda: {Lambda} = {Expone
 # Distribucion Rayleigh 
 Sigma = 2.5
 Rayleigh = np.random.rayleigh(scale = Sigma) # Valor aleatorio con distribcion Rayleigh (Sigma)
-print(f'Valor aleatorio con distribucion Exponencial Lambda: {Sigma} = {Rayleigh}')
+print(f'Valor aleatorio con distribucion Rayleigh Lambda: {Sigma} = {Rayleigh}')
 
-Rayleigh = np.random.exporayleighnential(scale = Sigma, size = 10) # Vector aleatorio con distribcion Rayleigh (Sigma)
-print(f'Vector aleatorio con distribucion Exponencial Lambda: {Sigma} = {Rayleigh}')
+Rayleigh = np.random.rayleigh(scale = Sigma, size = 10) # Vector aleatorio con distribcion Rayleigh (Sigma)
+print(f'Vector aleatorio con distribucion Rayleigh Lambda: {Sigma} = {Rayleigh}')
 
 # Distribucion T de Student
 GradosLibertad = 10
