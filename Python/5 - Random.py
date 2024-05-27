@@ -55,13 +55,13 @@ normalS = np.random.standard_normal(10) # Vector aleatorio con distribución nor
 print(f'Vector aleatorio con distribución normal estándar = {normalS}')
 
 # Distribución Log-Normal
-mu_x = 1 # Parámetro Posición
+mu_x = 1 # Parámetro localización
 sd_x = 2 # Parámetro Forma
 lognormal = np.random.lognormal(mean = mu, sigma = sd) # Valor aleatorio con distribcion Log-normal (Mu, Sigma)
-print(f'Valor aleatorio con distribución log-normal posición: {mu_x} forma: {sd_x} = {lognormal}')
+print(f'Valor aleatorio con distribución log-normal localización: {mu_x} forma: {sd_x} = {lognormal}')
 
 lognormal = np.random.lognormal(mean = mu, sigma = sd, size = 10) # Vector aleatorio con distribución Log-normal (Mu, Sigma)
-print(f'Vector aleatorio con distribución log-normal posición: {mu_x} forma: {sd_x} = {lognormal}')
+print(f'Vector aleatorio con distribución log-normal localización: {mu_x} forma: {sd_x} = {lognormal}')
 
 # Distribución Uniforme
 Inferior = 2 # Límite Inferior
@@ -81,6 +81,14 @@ print(f'Valor aleatorio con distribución Triangular l: {Inferior} m: {Moda} u: 
 
 triangular = np.random.triangular(left = Inferior,mode = Moda, right = Superior, size = 10) # Vector aleatorio con distribución Triangular (l, m, u)
 print(f'Vector aleatorio con distribución Triangular l: {Inferior} m: {Moda} u: {Superior} = {triangular}')
+
+# Distribución Potencia
+alpha = 3
+Potencia = np.random.power(a = alpha) # Valor aleatorio con distribución Potencia (alpha)
+print(f'Valor aleatorio con distribución Potencia alpha: {alpha} = {Potencia}')
+
+Potencia = np.random.power(a = alpha, size = 10) # Vector aleatorio con distribución Potencia (alpha)
+print(f'Vector aleatorio con distribución Potencia alpha: {alpha} = {Potencia}')
 
 # Distribución Exponencial
 Lambda = 3
@@ -107,7 +115,7 @@ Weibull = np.random.weibull(a = Alpha, size = 10) # Vector aleatorio con distrib
 print(f'Vector aleatorio con distribución Weibull Lamda: 1 Alpha: {Lambda} = {Weibull}')
 
 # Distribución Laplace
-Mu = 2 # Parámetro de posición 
+Mu = 2 # Parámetro de localización 
 b = 4 # Parámetro de escala
 Laplace = np.random.laplace(loc = Mu, scale = b) # Valor aleatorio con distribución Laplace (Mu, b)
 print(f'Valor aleatorio con distribución Laplace Mu: {Mu} b: {b} = {Laplace}')
@@ -116,7 +124,7 @@ Laplace = np.random.laplace(loc = Mu, scale = b, size = 10) # Vector aleatorio c
 print(f'Vector aleatorio con distribución Laplace Mu: {Mu} b: {b} = {Laplace}')
 
 # Distribución Logistic
-Mu = 2 # Parámetro de posición 
+Mu = 2 # Parámetro de localización 
 s = 4 # Parámetro de escala
 Logistic = np.random.logistic(loc = Mu, scale = s) # Valor aleatorio con distribución Logistic (Mu, s)
 print(f'Valor aleatorio con distribución Logistica Mu: {Mu} s: {s} = {Logistic}')
