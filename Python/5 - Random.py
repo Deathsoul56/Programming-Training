@@ -40,19 +40,19 @@ print(f"Permutación aleatoria: {permutacion}")
 # Distribuciones de probabilidad continuas
 # Distribución Normal
 mu = 5 # Media
-sd = 8 # Desviación estándar
+sd = 8 # Desviación Estándar
 normal = np.random.normal(loc = mu, scale = sd) # Valor aleatorio con distribución normal (media, Sx)
-print(f'Valor aleatorio con distribución normal media: {mu} desviación estándar: {sd} = {normal}')
+print(f'Valor aleatorio con distribución Normal media: {mu} desviación estándar: {sd} = {normal}')
 
 normal = np.random.normal(loc = mu, scale = sd, size = 10) # Vector aleatorio con distribución normal (media, Sx)
-print(f'Vector aleatorio con distribución normal media: {mu} desviación estándar: {sd} = {normal}')
+print(f'Vector aleatorio con distribución Normal media: {mu} desviación estándar: {sd} = {normal}')
 
-# Distribución normal estándar
+# Distribución Normal Estándar
 normalS = np.random.standard_normal() # Valor aleatorio con distribución normal (media = 0, Sx = 1)
-print(f'Valor aleatorio con distribución normal estándar = {normalS}')
+print(f'Valor aleatorio con distribución Normal Estándar = {normalS}')
 
 normalS = np.random.standard_normal(10) # Vector aleatorio con distribución normal (media = 0, Sx = 1)
-print(f'Vector aleatorio con distribución normal estándar = {normalS}')
+print(f'Vector aleatorio con distribución Normal Estándar = {normalS}')
 
 # Distribución Log-Normal
 mu_x = 1 # Parámetro localización
@@ -97,6 +97,13 @@ print(f'Valor aleatorio con distribución Exponencial Lambda: {Lambda} = {Expone
 
 Exponencial = np.random.exponential(scale = Lambda, size = 10) # Vector aleatorio con distribución Exponencial (Lambda)
 print(f'Vector aleatorio con distribución Exponencial Lambda: {Lambda} = {Exponencial}')
+
+# Distribución Exponencial Estándar
+ExponencialS = np.random.standard_exponential() # Valor aleatorio con distribución Exponencial (Lambda = 1)
+print(f'Valor aleatorio con distribución Exponencial Lambda: {1} = {ExponencialS}')
+
+ExponencialS = np.random.standard_exponential(size = 10) # Vector aleatorio con distribución Exponencial (Lambda = 1)
+print(f'Vector aleatorio con distribución Exponencial Lambda: {1} = {ExponencialS}')
 
 # Distribución Rayleigh 
 Sigma = 2.5
@@ -166,6 +173,24 @@ print(f'Valor aleatorio con distribución Gamma Alpha: {alpha} Lambda: {Lambda} 
 Gamma = np.random.gamma(shape = alpha, scale = Lambda, size = 10) # Vector aleatorio con distribución Gamma (Alpha, Lambda)
 print(f'Vector aleatorio con distribución Gamma Alpha: {alpha} Lambda: {Lambda} = {Gamma}')
 
+# Distribución Gumbel
+mu = 12
+beta = 17
+Gumbel = np.random.gumbel(loc = mu, scale = beta) # Valor aleatorio con distribución Gumbel (Mu, Beta)
+print(f'Valor aleatorio con distribución Gamma Mu: {mu} Beta: {beta} = {Gumbel}')
+
+Gumbel = np.random.gumbel(loc = mu, scale = beta, size = 10) # Vector aleatorio con distribución Gumbel (Mu, Beta)
+print(f'Vector aleatorio con distribución Gamma Mu: {mu} Beta: {beta} = {Gumbel}')
+
+# Distribución Wald
+media = 12 # Promedio (Parámetro de localización)
+Lambda = 17 # Parámetro de escala
+Wald = np.random.wald(mean = media, scale = Lambda) # Valor aleatorio con distribución Wald (Mu, Lambda)
+print(f'Valor aleatorio con distribución Wald Media: {media} Lambda: {Lambda} = {Wald}')
+
+Wald = np.random.wald(mean = media, scale = Lambda, size = 10) # Vector aleatorio con distribución Wald (Mu, Lambda)
+print(f'Vector aleatorio con distribución Wald Media: {media} Lambda: {Lambda} = {Wald}')
+
 # Distribuciones de probabilidad discretas
 # Distribución Binomial
 N = 10 # Cantidad de intentos
@@ -204,3 +229,11 @@ print(f'Valor aleatorio con distribución Hyper-Geométrica Población: { Poblac
 # Vector aleatorio con distribución Hyper-Geométrica (N, K, n)
 HiperGeo = np.random.hypergeometric(ngood = Poblacion, nbad = Categoria, nsample = muestra, size = 10) 
 print(f'Vector aleatorio con distribución Hyper-Geométrica Poblacion: {Poblacion} Categoria: {Categoria} muestra: {muestra} = {HiperGeo}')
+
+# Distribución Logarítmica
+p = 0.5
+logaritmica = np.random.logseries(p = p) # Valor aleatorio con distribución Logarítmica (p)
+print(f'Valor aleatorio con distribución Logarítmica p: {p} = {logaritmica}')
+
+logaritmica = np.random.logseries(p = p, size = 10) # Vector aleatorio con distribución Logarítmica (p)
+print(f'Vector aleatorio con distribución Logarítmica p: {p} = {logaritmica}')
