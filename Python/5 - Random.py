@@ -7,7 +7,7 @@ print(f'Número aleatorio entre 0 y 1: {aleatorio}')
 aleatorio = np.random.randint(-10, 10+1) # Numero aleatorio entre -10 y 10, el intervalo es cerrado-abierto [)
 print(f'Número aleatorio: {aleatorio}')
 
-aleatorio = np.random.randint(-10, 10+1, size = 10) # Vector 10 números aleatorios
+aleatorio = np.random.randint(-10, 10+1, size = 10) # Vector 10 números aleatorios entre 0 y 1
 print(f'Vector aletario: {aleatorio}')
 
 aleatorio = np.random.sample(5) # Muestra de 5 valores aleatorios 
@@ -139,6 +139,22 @@ print(f'Valor aleatorio con distribución Logistica Mu: {Mu} s: {s} = {Logistic}
 Logistic = np.random.logistic(loc = Mu, scale = s, size = 10) # Vector aleatorio con distribución Logistic (Mu, s)
 print(f'Vector aleatorio con distribución Logistica Mu: {Mu} s: {s} = {Logistic}')
 
+# Distribución Beta
+alpha = 1 # Parámetro de forma
+beta = 5 # Parámetro de forma
+Logistic = np.random.beta(a = alpha, b = beta) # Valor aleatorio con distribución Beta (alpha, beta)
+print(f'Valor aleatorio con distribución Beta Alpha: {alpha} Beta: {beta} = {Logistic}')
+
+Logistic = np.random.beta(a = alpha, b = beta, size = 10) # Vector aleatorio con distribución Beta (alpha, beta)
+print(f'Vector aleatorio con distribución Beta Alpha: {alpha} Beta: {beta} = {Logistic}')
+
+# Distribución Cauchy Estándar
+Cauchy = np.random.standard_cauchy() # Valor aleatorio con distribución Cauchy Estándar (x_0 = 0, gamma = 1)
+print(f'Valor aleatorio con distribución Cauchy Estándar = {Cauchy}')
+
+Cauchy = np.random.standard_cauchy(size = 10) # Vector aleatorio con distribución Cauchy Estándar (x_0 = 0, gamma = 1)
+print(f'Vector aleatorio con distribución Cauchy Estándar = {Cauchy}')
+
 # Distribución T de Student
 GradosLibertad = 10
 T_Student = np.random.standard_t(df = GradosLibertad) # Valor aleatorio con distribcion T (Nu)
@@ -172,6 +188,14 @@ print(f'Valor aleatorio con distribución Gamma Alpha: {alpha} Lambda: {Lambda} 
 
 Gamma = np.random.gamma(shape = alpha, scale = Lambda, size = 10) # Vector aleatorio con distribución Gamma (Alpha, Lambda)
 print(f'Vector aleatorio con distribución Gamma Alpha: {alpha} Lambda: {Lambda} = {Gamma}')
+
+# Distribución Gamma Estándar
+alpha = 12
+Gamma = np.random.standard_gamma(shape = alpha) # Valor aleatorio con distribución Gamma Estándar (Alpha, Lambda = 1)
+print(f'Valor aleatorio con distribución Gamma Estándar Alpha: {alpha} Lambda: {1} = {Gamma}')
+
+Gamma = np.random.standard_gamma(shape = alpha, size = 10) # Vector aleatorio con distribución Gamma Estándar (Alpha, Lambda = 1)
+print(f'Vector aleatorio con distribución Gamma Estándar Alpha: {alpha} Lambda: {1} = {Gamma}')
 
 # Distribución Gumbel
 mu = 12
