@@ -52,9 +52,9 @@ print(f"csc(π/6) = {1 / np.sin(Pi/6)}")     # Funcion Cosecante
 print(f"cotg(π/6) = {1 / np.tan(Pi/6)}")    # Funcion Cotangente
 
 #Funciones Trigonometricas Inversas
-print(f'Arcosen(1/2) = {np.arcsin(1/2)}')   # Arcoseno
-print(f'Arcocosen(1/2) = {np.arccos(1/2)}') # Arcocoseno
-print(f'Arcotg(1/2) = {np.arctan(1/2)}')    # Arcotangente
+print(f'Arcosen(1/2) = {np.arcsin(1/2) * 180 / Pi }')   # Arcoseno
+print(f'Arcocosen(1/2) = {np.arccos(1/2) * 180 / Pi}')  # Arcocoseno
+print(f'Arcotg(1) = {np.arctan(1) * 180 / Pi}')     # Arcotangente
 
 # Cambios de Angulos
 print(f'180° en radianes es: {np.deg2rad(180)}')    # De deg a radianes

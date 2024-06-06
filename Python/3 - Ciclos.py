@@ -1,6 +1,6 @@
 # Ciclos
 
-# Tipos While
+# Tipo While
 x = -3
 while x <= 10:
     print(f"Valor de x = {x}")
@@ -21,7 +21,7 @@ while True: # while infinito
 for i in range(5+1): #Ciclo for imprime de 0 hasta n-1
     print(f"Valor de i = {i}")
 
-for j in range(-5, 7): # Imprime de -5 hasta 3 el intervalor es semi cerrado [-5, 4)
+for j in range(-5, 7): # Imprime de -5 hasta 7 el intervalor es semi cerrado [-5, 7)
     print(f"Valor de j = {j}")
 
 # Avanzar por una lista
