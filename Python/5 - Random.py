@@ -215,6 +215,15 @@ print(f'Valor aleatorio con distribución Wald Media: {media} Lambda: {Lambda} =
 Wald = np.random.wald(mean = media, scale = Lambda, size = 10) # Vector aleatorio con distribución Wald (Mu, Lambda)
 print(f'Vector aleatorio con distribución Wald Media: {media} Lambda: {Lambda} = {Wald}')
 
+# Distribución von Mises
+Mu = -2 # Parámetro de localización
+Kappa = 3 # Parámetro de escala
+vonMises = np.random.vonmises(mu = Mu, kappa = Kappa) # Valor aleatorio con distribución von Mises (Mu, Kappa)
+print(f'Valor aleatorio con distribución von Mises Mu: {Mu} Kappa: {Kappa} = {vonMises}')
+
+vonMises = np.random.vonmises(mu = Mu, kappa = Kappa, size = 10) # Vector aleatorio con distribución von Mises (Mu, Kappa)
+print(f'Vector aleatorio con distribución von Mises Mu: {Mu} Kappa: {Kappa} = {vonMises}')
+
 # Distribuciones de probabilidad discretas
 # Distribución Binomial
 N = 10 # Cantidad de intentos
@@ -240,6 +249,15 @@ print(f'Valor aleatorio con distribución Geométrica Probabilidad: {Prop} = {Ge
 
 Geometrica = np.random.geometric(p = Prop, size = 10) # Vector aleatorio con distribución Geométrica (Pi)
 print(f'Vector aleatorio con distribución Geométrica Probabilidad: {Prop} = {Geometrica}')
+
+# Distribución Binomial Negativa
+N = 10 # Cantidad de intentos
+Prop = 0.25 # Probabilidad de existo
+Nbinomial = np.random.negative_binomial(n = N, p = Prop) # Valor aleatorio con distribución Binomial Negativa (N, Pi)
+print(f'Valor aleatorio con distribución Binomial Negativa Intentos: {N} Probabilidad: {Prop} = {binomial}')
+
+Nbinomial = np.random.negative_binomial(n = N, p = Prop, size = 10) # Vector aleatorio con distribución Binomial Negativa (N, Pi)
+print(f'Vector aleatorio con distribución Binomial Negativa Intentos: {N} Probabilidad: {Prop} = {binomial}')
 
 # Distribución Hyper-Geométrica
 Poblacion = 20 # N
