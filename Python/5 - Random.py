@@ -279,3 +279,22 @@ print(f'Valor aleatorio con distribución Logarítmica p: {p} = {logaritmica}')
 
 logaritmica = np.random.logseries(p = p, size = 10) # Vector aleatorio con distribución Logarítmica (p)
 print(f'Vector aleatorio con distribución Logarítmica p: {p} = {logaritmica}')
+
+# Distribuciones de probabilidad conjuntas
+# Distribución Normal
+vmu = np.array([3, 6, 7]) # Vector de Medias
+mcov = np.array([[10, 2, 6], [2, 9, -3], [6, -3, 7]]) # Matriz de Covarainzas
+normalM = np.random.multivariate_normal(mean = vmu, cov = mcov) # Valor aleatorio con distribución normal multivariada (media, Sx)
+print(f'Vector aleatorio con distribución Normal Mulivariada vector de medias: {vmu} matriz de covarianza: {mcov} = {normalM}')
+
+normalM = np.random.multivariate_normal(mean = vmu, cov = mcov, size = 10) # Vector aleatorio con distribución normal multivariada (media, Sx)
+print(f'Matriz aleatorio con distribución Normal Mulivariada vector de medias: {vmu} matriz de covarianza: {mcov} = {normalM}')
+
+# Distribución Multinomial
+N = 10 # Cantidad de intentos
+Prop = np.array([0.25, 0.3, 0.1]) # Probabilidad de existo
+multinomial = np.random.multinomial(n = N, pvals = Prop) # Valor aleatorio con distribución Multinomial (N, Pi)
+print(f'Vector aleatorio con distribución Binomial Intentos: {N} Vector de Probabilidades: {Prop} = {multinomial}')
+
+multinomial = np.random.multinomial(n = N, pvals = Prop, size = 10) # Vector aleatorio con distribución Multinomial (N, Pi)
+print(f'Matriz aleatorio con distribución Binomial Intentos: {N} Vector de Probabilidades: {Prop} = {multinomial}')
