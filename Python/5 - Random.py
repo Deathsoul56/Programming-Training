@@ -298,3 +298,11 @@ print(f'Vector aleatorio con distribución Binomial Intentos: {N} Vector de Prob
 
 multinomial = np.random.multinomial(n = N, pvals = Prop, size = 10) # Vector aleatorio con distribución Multinomial (N, Pi)
 print(f'Matriz aleatorio con distribución Binomial Intentos: {N} Vector de Probabilidades: {Prop} = {multinomial}')
+
+# Distribución dirichlet
+Alpha = np.array([1, 3, 7]) # Parámetro de concentración
+dirichlet = np.random.dirichlet(alpha = Alpha) # Valor aleatorio con distribución dirichlet (alpha)
+print(f'Vector aleatorio con distribución dirichlet alpha: {Alpha} = {dirichlet}')
+
+dirichlet = np.random.dirichlet(alpha = Alpha, size = 10) # Vector aleatorio con distribución dirichlet (alpha)
+print(f'Matriz aleatorio con distribución dirichlet alpha: {Alpha} = {dirichlet}')
