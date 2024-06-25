@@ -59,6 +59,17 @@ puts "Valor aleatorio con distribución log-normal localización: #{mu_x} forma:
 lognormal = Array.new(10) { lognormal_dist.rng } # Vector aleatorio con distribución Log-normal (mu_x, sd_x)
 puts "Vector aleatorio con distribución log-normal localización: #{mu_x} forma: #{sd_x} = #{lognormal}"
 
+# Distribución Uniforme
+inferior = 2 # Límite Inferior
+superior = 5 # Límite Superior
+uniforme = Rubystats::UniformDistribution.new(inferior, superior).rng # Valor aleatorio con distribución Uniforme (a, b)
+puts "Valor aleatorio con distribución Uniforme a: #{inferior} b: #{superior} = #{uniforme}"
+
+uniforme_vector = Rubystats::UniformDistribution.new(inferior, superior).rng(10) # Vector aleatorio con distribución Uniforme (a, b)
+puts "Vector aleatorio con distribución Uniforme a: #{inferior} b: #{superior} = #{uniforme_vector}"
+
+
+
 # Distribuciones de probabilidad discretas
 # Distribución Binomial
 N = 10 # Cantidad de intentos
