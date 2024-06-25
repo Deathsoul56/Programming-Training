@@ -171,6 +171,15 @@ print(f'Valor aleatorio con distribución Chi Cuadrado Nu: {GradosLibertad} = {C
 Chi_Cuadrado = np.random.chisquare(df = GradosLibertad, size = 10) # Vector aleatorio con distribcion Chi Cuadrado (Nu)
 print(f'Vector aleatorio con distribución Chi Cuadrado Nu: {GradosLibertad} = {Chi_Cuadrado}')
 
+# Distribución Chi Cuadrado No Central
+GradosLibertad = 10
+Lambda = 6 # Parámetro de no centralidad
+Chi_Cuadrado = np.random.noncentral_chisquare(df = GradosLibertad, nonc = Lambda) # Valor aleatorio con distribución Chi Cuadrado (Nu, Lambda)
+print(f'Valor aleatorio con distribución Chi Cuadrado No Central Nu: {GradosLibertad} Lamda: {Lambda} = {Chi_Cuadrado}')
+
+Chi_Cuadrado = np.random.noncentral_chisquare(df = GradosLibertad, nonc = Lambda, size = 10) # Vector aleatorio con distribcion Chi Cuadrado (Nu, Lambda)
+print(f'Vector aleatorio con distribución Chi Cuadrado No Central Nu: {GradosLibertad} Lamda: {Lambda} = {Chi_Cuadrado}')
+
 # Distribución F de Fisher
 GradosLibertad1 = 12
 GradosLibertad2 = 17
