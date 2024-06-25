@@ -70,18 +70,61 @@ func main() {
 	normalDist := distuv.Normal{
 		Mu:    mu,
 		Sigma: sd,
+		Src:   nil, // Semilla
 	}
 	// Valor aleatorio con distribución normal
-	normalValue := normalDist.Rand()
-	fmt.Printf("Valor aleatorio con distribución Normal media: %.2f desviación estándar: %.2f = %.2f\n", mu, sd, normalValue)
+	ValorAletario := normalDist.Rand()
+	fmt.Printf("Valor aleatorio con distribución Normal media: %.2f desviación estándar: %.2f = %.2f\n", mu, sd, ValorAletario)
 
 	// Vector aleatorio con distribución normal
 	size := 10
-	normalVector := make([]float64, size)
-	for i := range normalVector {
-		normalVector[i] = normalDist.Rand()
+	VectorAleatorio := make([]float64, size)
+	for i := range VectorAleatorio {
+		VectorAleatorio[i] = normalDist.Rand()
 	}
-	fmt.Printf("Vector aleatorio con distribución Normal media: %.2f desviación estándar: %.2f = %v\n", mu, sd, normalVector)
+	fmt.Printf("Vector aleatorio con distribución Normal media: %.2f desviación estándar: %.2f = %v\n", mu, sd, VectorAleatorio)
+
+	// Distribución Log-Normal
+	mu_x := 1.0 // Parámetro localización
+	sd_x := 2.0 // Parámetro Forma
+
+	// Inicializar la Distribución Normal
+	logNormal := distuv.LogNormal{
+		Mu:    mu_x,
+		Sigma: sd_x,
+	}
+
+	// Valor aleatorio con distribución log-normal
+	ValorAletario = logNormal.Rand()
+	fmt.Printf("Valor aleatorio con distribución log-normal localización: %v forma: %v = %v\n", mu_x, sd_x, ValorAletario)
+
+	// Vector aleatorio con distribución log-normal
+	VectorAleatorio = make([]float64, 10)
+	for i := range VectorAleatorio {
+		VectorAleatorio[i] = logNormal.Rand()
+	}
+	fmt.Printf("Vector aleatorio con distribución log-normal localización: %v forma: %v = %v\n", mu_x, sd_x, VectorAleatorio)
+
+	// Distribución Log-Normal
+	inferior := 2.0 // Límite Inferior
+	superior := 5.0 // Límite Superior
+
+	// Inicializar la Distribución Normal
+	uniform := distuv.Uniform{
+		Min: inferior,
+		Max: superior,
+	}
+
+	// Valor aleatorio con distribución uniforme
+	ValorAletario = uniform.Rand()
+	fmt.Printf("Valor aleatorio con distribución Uniforme a: %.2f b: %.2f = %.4f\n", inferior, superior, ValorAletario)
+
+	// Vector aleatorio con distribución uniforme
+	VectorAleatorio = make([]float64, 10)
+	for i := range VectorAleatorio {
+		VectorAleatorio[i] = uniform.Rand()
+	}
+	fmt.Printf("Vector aleatorio con distribución Uniforme a: %.2f b: %.2f = %v\n", inferior, superior, VectorAleatorio)
 
 	// Distribución Exponencial
 	Lambda := 3.0 // Parámetro Lambda (es el inverso de la escala en gonum)
@@ -89,7 +132,6 @@ func main() {
 	// Inicializar la Distribución Exponencial
 	exponencial := distuv.Exponential{
 		Rate: 1 / Lambda, // La tasa es el inverso de Lambda
-		Src:  nil,
 	}
 
 	// Generar un valor aleatorio con distribución exponencial
@@ -144,4 +186,13 @@ func main() {
 		vectorpois[i] = poisson.Rand()
 	}
 	fmt.Printf("Vector aleatorio con distribución Poisson Lambda: %v = %v\n", Lambda, vectorpois)
+
+	// Inicializa la semilla del generador de números aleatorios
+	//src := rand.NewSource(time.Now().UnixNano())
+	//rng := rand.New(src)
+
+	// Valor aleatorio con distribución triangular
+	//T := distuv.Triangular{Min: inferior, Mode: moda, Max: superior, Src: rng}
+	//TrandomValue := triangular.Rand()
+	//fmt.Println(TrandomValue)
 }
