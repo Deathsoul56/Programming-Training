@@ -39,6 +39,7 @@ permutacion = secuencia.shuffle # Generamos una permutación aleatoria de la sec
 puts "Permutación aleatoria: #{permutacion}"
 
 # Distribuciones de probabilidad continuas
+# Distribución Normal
 mu = 5 # Media
 sd = 8 # Desviación estándar
 
@@ -51,8 +52,8 @@ puts "Vector aleatorio con distribución normal media: #{mu} desviación estánd
 # Distribución Log-Normal
 mu_x = 1 # Parámetro localización
 sd_x = 2 # Parámetro Forma
+lognormal_dist = Rubystats::LognormalDistribution.new(mu_x, sd_x) # Inicializa la distribucion LogNormal
 
-lognormal_dist = Rubystats::LognormalDistribution.new(mu_x, sd_x) # Inicializa la distribucion
 lognormal = lognormal_dist.rng # Valor aleatorio con distribución Log-normal (mu_x, sd_x)
 puts "Valor aleatorio con distribución log-normal localización: #{mu_x} forma: #{sd_x} = #{lognormal}"
 
@@ -68,6 +69,26 @@ puts "Valor aleatorio con distribución Uniforme a: #{inferior} b: #{superior} =
 uniforme_vector = Rubystats::UniformDistribution.new(inferior, superior).rng(10) # Vector aleatorio con distribución Uniforme (a, b)
 puts "Vector aleatorio con distribución Uniforme a: #{inferior} b: #{superior} = #{uniforme_vector}"
 
+# Distribución Exponencial
+Lambda = 3
+exponential_dist = Rubystats::ExponentialDistribution.new(Lambda) # Inicializa la distribucion exponencial
+
+exponencial = exponential_dist.rng # Valor aleatorio con distribución Exponencial (Lambda)
+puts "Valor aleatorio con distribución Exponencial Lambda: #{Lambda} = #{exponencial}"
+
+exponencial = Array.new(10) { exponential_dist.rng } # Vector aleatorio con distribución Exponencial (Lambda)
+puts "Vector aleatorio con distribución Exponencial Lambda: #{Lambda} = #{exponencial}"
+
+# Distribucion Weibull
+k = 2  # Parámetro de forma (alpha)
+Lambda = 1  # Parámetro de localización (lambda)
+weibull_dist = Rubystats::WeibullDistribution.new(k, Lambda) # Inicializa la distribucion Weibull
+
+weibull = weibull_dist.rng # Valor aleatorio con distribución Weibull (Lambda, k)
+puts "Valor aleatorio con distribución Weibull (shape: #{k}, scale: #{Lambda}) = #{weibull}"
+
+weibull = Array.new(10) { weibull_dist.rng } # Vector aleatorio con distribución Weibull (Lambda, k)
+puts "Vector aleatorio con distribución Weibull (shape: #{k}, scale: #{Lambda}) = #{weibull}"
 
 
 # Distribuciones de probabilidad discretas
