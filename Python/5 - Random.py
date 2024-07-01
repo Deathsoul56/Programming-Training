@@ -142,11 +142,11 @@ print(f'Vector aleatorio con distribución Logistica Mu: {Mu} s: {s} = {Logistic
 # Distribución Beta
 alpha = 1 # Parámetro de forma
 beta = 5 # Parámetro de forma
-Logistic = np.random.beta(a = alpha, b = beta) # Valor aleatorio con distribución Beta (alpha, beta)
-print(f'Valor aleatorio con distribución Beta Alpha: {alpha} Beta: {beta} = {Logistic}')
+Beta_Dis = np.random.beta(a = alpha, b = beta) # Valor aleatorio con distribución Beta (alpha, beta)
+print(f'Valor aleatorio con distribución Beta Alpha: {alpha} Beta: {beta} = {Beta_Dis}')
 
-Logistic = np.random.beta(a = alpha, b = beta, size = 10) # Vector aleatorio con distribución Beta (alpha, beta)
-print(f'Vector aleatorio con distribución Beta Alpha: {alpha} Beta: {beta} = {Logistic}')
+Beta_Dis = np.random.beta(a = alpha, b = beta, size = 10) # Vector aleatorio con distribución Beta (alpha, beta)
+print(f'Vector aleatorio con distribución Beta Alpha: {alpha} Beta: {beta} = {Beta_Dis}')
 
 # Distribución Cauchy Estándar
 Cauchy = np.random.standard_cauchy() # Valor aleatorio con distribución Cauchy Estándar (x_0 = 0, gamma = 1)

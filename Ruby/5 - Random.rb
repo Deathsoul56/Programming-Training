@@ -90,6 +90,18 @@ puts "Valor aleatorio con distribución Weibull (shape: #{k}, scale: #{Lambda}) 
 weibull = Array.new(10) { weibull_dist.rng } # Vector aleatorio con distribución Weibull (Lambda, k)
 puts "Vector aleatorio con distribución Weibull (shape: #{k}, scale: #{Lambda}) = #{weibull}"
 
+# Distribución Beta
+alpha = 1.0 # Parámetro de forma
+beta = 5.0 # Parámetro de forma
+
+beta_dist = Rubystats::BetaDistribution.new(alpha, beta) # Inicializa la distribucion 
+
+beta_dis = beta_dist.rng # Valor aleatorio con distribución Beta (alpha, beta)
+puts "Valor aleatorio con distribución Beta Alpha: #{alpha} Beta: #{beta} = #{beta_dis}"
+
+beta_dis_vector = 10.times.map { beta_dist.rng } # Vector aleatorio con distribución Beta (alpha, beta)
+puts "Vector aleatorio con distribución Beta Alpha: #{alpha} Beta: #{beta} = #{beta_dis_vector}"
+
 
 # Distribuciones de probabilidad discretas
 # Distribución Binomial
