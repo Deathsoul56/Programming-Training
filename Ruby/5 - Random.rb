@@ -102,6 +102,17 @@ puts "Valor aleatorio con distribución Beta Alpha: #{alpha} Beta: #{beta} = #{b
 beta_dis_vector = 10.times.map { beta_dist.rng } # Vector aleatorio con distribución Beta (alpha, beta)
 puts "Vector aleatorio con distribución Beta Alpha: #{alpha} Beta: #{beta} = #{beta_dis_vector}"
 
+# Distribución Gamma
+alpha = 12
+lambda = 17
+gamma_dist = Rubystats::GammaDistribution.new(alpha, lambda) # Inicializa la distribucion gamma
+
+gamma_value = gamma_dist.rng # Valor aleatorio con distribución Gamma (Alpha, Lambda)
+puts "Valor aleatorio con distribución Gamma Alpha: #{alpha} Lambda: #{lambda} = #{gamma_value}"
+
+gamma_vector = Array.new(10) { gamma_dist.rng } # Vector aleatorio con distribución Gamma (Alpha, Lambda)
+puts "Vector aleatorio con distribución Gamma Alpha: #{alpha} Lambda: #{lambda} = #{gamma_vector}"
+
 
 # Distribuciones de probabilidad discretas
 # Distribución Binomial
