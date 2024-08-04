@@ -40,3 +40,10 @@ Flotante = np.append(Flotante, 65.2345)
 print(Flotante)
 Flotante = np.delete(Flotante, 2)
 print(Flotante)
+
+
+# Combertir de Array a String
+saludo = np.array(['h', 'o', 'l', 'a'])
+juntar = ''.join(saludo)
+juntar2 = '-'.join(saludo)
+print(juntar, juntar2)

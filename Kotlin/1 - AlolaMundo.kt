@@ -94,8 +94,8 @@ fun main() {
     val resultado3: Double = 5 / 2.0
     println("5 / 2.0 = $resultado3 de tipo ${resultado3::class.simpleName}")
 
-    // Operaciones Logicas
-    println("Operadores Lógicos")
+    // Operaciones Comparacion
+    println("Operadores Comparacion")
     val op1 = 23
     val op2 = 57
 
@@ -107,6 +107,7 @@ fun main() {
     println("Es $op2 Igual a 57: ${op2 == 57}")
     println("Es $op1 distinto a $op2: ${op1 != op2}") // Distinto a
 
+    // Operaciones Logicas
     println("Algebra Booleana")
     val t = true
     val f = false
