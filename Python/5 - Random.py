@@ -233,6 +233,14 @@ print(f'Valor aleatorio con distribución von Mises Mu: {Mu} Kappa: {Kappa} = {v
 vonMises = np.random.vonmises(mu = Mu, kappa = Kappa, size = 10) # Vector aleatorio con distribución von Mises (Mu, Kappa)
 print(f'Vector aleatorio con distribución von Mises Mu: {Mu} Kappa: {Kappa} = {vonMises}')
 
+# Distribución Lomax (Pareto II)
+alpha = 3 # Parámetro de forma
+Lomax = np.random.pareto(a = alpha) # Valor aleatorio con distribución Lomax (alpha, lambda = 1)
+print(f'Valor aleatorio con distribución Lomax alpha: {alpha} lambda: {1} = {Lomax}')
+
+Lomax = np.random.pareto(a = alpha, size = 10) # Vector aleatorio con distribución Lomax (alpha, lambda = 1)
+print(f'Vector aleatorio con distribución Lomax alpha: {alpha} lambda: {1} = {Lomax}')
+
 # Distribuciones de probabilidad discretas
 # Distribución Binomial
 N = 10 # Cantidad de intentos
