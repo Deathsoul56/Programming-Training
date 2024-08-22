@@ -189,6 +189,16 @@ print(f'Valor aleatorio con distribución F de Fisher Nu_1: {GradosLibertad1} Nu
 F_Fisher = np.random.f(dfnum = GradosLibertad1, dfden = GradosLibertad2, size = 10) # Vector aleatorio con distribución F de Fisher (Nu_1, Nu_2)
 print(f'Vector aleatorio con distribución F de Fisher Nu_1: {GradosLibertad1} Nu_2: {GradosLibertad2} = {F_Fisher}')
 
+# Distribución F de Fisher no central
+GradosLibertad1 = 12
+GradosLibertad2 = 17
+nocentral = 5 # Parámetro de no centralidad
+F_Fisher = np.random.noncentral_f(dfnum = GradosLibertad1, dfden = GradosLibertad2, nonc = nocentral) # Valor aleatorio con distribución F de Fisher no central (Nu_1, Nu_2, sigma)
+print(f'Valor aleatorio con distribución F de Fisher no central Nu_1: {GradosLibertad1} Nu_2: {GradosLibertad2} Sigma: {nocentral} = {F_Fisher}')
+
+F_Fisher = np.random.noncentral_f(dfnum = GradosLibertad1, dfden = GradosLibertad2, nonc = nocentral, size = 10) # Vector aleatorio con distribución F de Fisher no central (Nu_1, Nu_2, sigma)
+print(f'Vector aleatorio con distribución F de Fisher no central Nu_1: {GradosLibertad1} Nu_2: {GradosLibertad2} Sigma: {nocentral} = {F_Fisher}')
+
 # Distribución Gamma
 alpha = 12
 Lambda = 17
