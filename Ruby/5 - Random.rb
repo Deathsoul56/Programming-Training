@@ -1,5 +1,6 @@
 require 'securerandom'
 require 'rubystats'
+require 'matrix'
 
 # Números Pseudo-Aleatorios
 aleatorio = rand # Número aleatorio entre 0 y 1
@@ -112,6 +113,27 @@ puts "Valor aleatorio con distribución Gamma Alpha: #{alpha} Lambda: #{lambda} 
 
 gamma_vector = Array.new(10) { gamma_dist.rng } # Vector aleatorio con distribución Gamma (Alpha, Lambda)
 puts "Vector aleatorio con distribución Gamma Alpha: #{alpha} Lambda: #{lambda} = #{gamma_vector}"
+
+# Distribución Cauchy
+x_0 = 0 # Parámetro de localización 
+gamma = 1 # Parámetro de forma
+cauchy = Rubystats::CauchyDistribution.new(x_0, gamma) # Inicializa la distribucion Cauchy
+
+cauchy_value = cauchy.rng # Valor aleatorio con distribución Cauchy (x_0, gamma)
+puts "Valor aleatorio con distribución Cauchy x_0: #{x_0} gamma: #{gamma} = #{cauchy_value}"
+
+cauchy_vector = Array.new(10) { cauchy.rng } # Vector aleatorio con distribución Cauchy (x_0, gamma)
+puts "Vector aleatorio con distribución Cauchy = #{cauchy_vector}"
+
+# Distribución T de Student
+GradosLibertad = 10
+t_dist = Rubystats::StudentTDistribution.new(GradosLibertad)
+
+T_value = t_dist.rng # Valor aleatorio con distribcion T (Nu)
+puts "Valor aleatorio con distribución T Nu: #{GradosLibertad} = #{T_value}"
+
+T_vector = Array.new(10) { t_dist.rng } # Vector aleatorio con distribución T (Nu)
+puts "Vector aleatorio con distribución T Nu: #{GradosLibertad} = #{T_vector}"
 
 
 # Distribuciones de probabilidad discretas
