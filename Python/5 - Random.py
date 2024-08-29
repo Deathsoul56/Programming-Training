@@ -307,6 +307,15 @@ print(f'Valor aleatorio con distribución Logarítmica p: {p} = {logaritmica}')
 logaritmica = np.random.logseries(p = p, size = 10) # Vector aleatorio con distribución Logarítmica (p)
 print(f'Vector aleatorio con distribución Logarítmica p: {p} = {logaritmica}')
 
+# Distribución Zipf's
+alpha = 4
+zipf = np.random.zipf(a = alpha) # Valor aleatorio con distribución zipf (alpha)
+print(f'Valor aleatorio con distribución zipf alpha: {alpha} = {zipf}')
+
+zipf = np.random.zipf(a = alpha, size = 10) # Vector aleatorio con distribución zipf (alpha)
+print(f'Vector aleatorio con distribución zipf alpha: {alpha} = {zipf}')
+
+
 # Distribuciones de probabilidad conjuntas
 # Distribución Normal
 vmu = np.array([3, 6, 7]) # Vector de Medias
