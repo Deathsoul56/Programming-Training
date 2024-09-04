@@ -37,6 +37,31 @@ print(f"Secuencia original: {secuencia}")
 permutacion = np.random.permutation(secuencia) # Generamos una permutación aleatoria de la secuencia
 print(f"Permutación aleatoria: {permutacion}")
 
+#Simllas
+rs = np.random.RandomState(seed=42) # Crear un generador de números aleatorios con una semilla específica<
+
+random_number = rs.rand() # Generar un número aleatorio entre 0 y 1
+print(f"Número aleatorio: {random_number}") # Siempre dara el mismo numero para una misma semilla
+
+random_integer = rs.randint(0, 10) 
+print(f"Número aleatorio entero: {random_integer}")
+
+random_normals = rs.randn(5) # Generar una lista de 5 números aleatorios normalmente distribuidos
+print(f"Números aleatorios distribuidos normalmente: {random_normals}")
+
+state = rs.get_state() # Obtener el estado interno del generador
+print(f"Estado interno del generador: {state}")
+
+rs.set_state(state) # Cambiar el estado interno del generador
+
+random_number_after_state = rs.rand() # Generar otro número aleatorio después de restablecer el estado
+print(f"Número aleatorio después de restablecer el estado: {random_number_after_state}")
+
+rs.seed(24) # Inicializar la semilla del generador nuevamente
+random_number_after_seed = rs.rand()
+print(f"Número aleatorio después de inicializar la semilla: {random_number_after_seed}")
+
+
 # Distribuciones de probabilidad continuas
 # Distribución Normal
 mu = 5 # Media
