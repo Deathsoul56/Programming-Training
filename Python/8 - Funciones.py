@@ -1,12 +1,25 @@
-import numpy as np
+# Definir funciones con def
 
-# Definir funciones
+# 1. Función básica sin parámetros
+def saludar():
+    print("¡Hola, bienvenido al curso de Python!")
+
+# 2. Función con parámetros
 def funcion (x):
     return x + 5
 
+# 3.
 def funcion2 (x, y):
     z = x - y   # Las variables que se crean en una funcion solo exsiten en la funcion
     return z
+
+# 4. Función con múltiples valores de retorno
+def calcular_estadisticas(numeros):
+    suma = sum(numeros)
+    promedio = suma / len(numeros)
+    maximo = max(numeros)
+    minimo = min(numeros)
+    return suma, promedio, maximo, minimo
 
 # Funcion que devuelve el caracter mas repetido de un String
 def caracter_mas_repetido(cadena):
@@ -16,7 +29,7 @@ def caracter_mas_repetido(cadena):
     # Crear un diccionario para contar la frecuencia de cada carácter
     frecuencias = {}
     for char in cadena:
-        if char in frecuencias and char != '':
+        if char in frecuencias and char != ' ':
             frecuencias[char] += 1
         else:
             frecuencias[char] = 1
@@ -29,13 +42,19 @@ def caracter_mas_repetido(cadena):
 
 # Programa principal
 if __name__ == '__main__':
-    print(f'Comienzo del programa {funcion(5)}') # Invocar la funcion
+    saludar() # Invocar la funcion
+    print(f'Comienzo del programa {funcion(5)}')
     
     valor1 = 10
     valor2 = 4
     valor3 = funcion2(valor1, valor2)
     print(valor3)
 
+    vector = [15, 23, 20, 11, 9, 16, 15, 22, 30, 17]
+    suma, promedio, max_num, min_num = calcular_estadisticas(vector)
+    print(f"Suma: {suma}, Promedio: {promedio}, Máximo: {max_num}, Mínimo: {min_num}")
+    print(f'Estadisticas: {calcular_estadisticas(vector)}')
+
     x = "Mi nombre es Máximo decimo Meridio, comandante de los ejércitos del norte, general de las legiones Félix. leal, sirviente del único emperador Marco Aurelio, padre de un hijo asesinado, esposo de una esposa asesinada. Y juro que me vengaré. en esta vida o en la otra."
     resultado = caracter_mas_repetido(x)
-    print(f"El carácter que más se repite en '{x}' es '{resultado}'")
+    print(f"El carácter que más se repite en '{x}' \nes '{resultado}'")

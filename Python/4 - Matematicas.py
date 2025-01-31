@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 Pi = np.pi          # Valor de pi 3.141592653589793
 e = np.e            # Valor de e 2.718281828459045
 inf = np.inf        # Infinito Positivo
-minf = np.NINF      # Infinito Negativo
-NoNumero = np.NaN   # No es un numero (Not a number)
+minf = -np.inf      # Infinito Negativo
+NoNumero = np.nan   # No es un numero (Not a number)
 print(f"Valor de Pi: {Pi}, Valor de e: {e}")
 print(f"Infinito positivo: {inf}, infinito negativo: {minf}")
 print(f"No es un numero: {NoNumero}")
