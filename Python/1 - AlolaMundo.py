@@ -15,7 +15,7 @@ b = True                                                    # Boolean
 list = [1, 2, 3, 'a', 'b']                                  # Lista
 tuple = (1, 2, 3, 'a', 'b')                                 # Tupla
 set = {1, 2, 23, x, 3, 3, 4, y, A, 'A', 'A', 'A', 'a'}      # Conjunto (solo aparecera los elementos 1 sola vez)
-dick = {'Nombre': 'Bob Esponja', 
+dicc = {'Nombre': 'Bob Esponja', 
         'Edad': 25,
         'Cursos': ['Calculo', 'Algebra', 'Ingles']}          # Diccionario
 Nulo = None # Esto es un valor nulo
@@ -28,7 +28,7 @@ print("Esto es un Booleano", b, type(b))
 print("Esto es una lista", list, type(list))
 print("Esto es una tupla", tuple, type(tuple))
 print("Esto es un conjunto", set, type(set))
-print("Esto es un diccionario", dick, type(dick))
+print("Esto es un diccionario", dicc, type(dicc))
 print("Esto es un nulo", Nulo, type(Nulo))
 
 # Una variable puede cambiar de tipo (tipado dinámico)
@@ -44,8 +44,8 @@ X = "73"  #Variable tipo string
 print("esto es x:" , x, "Esto es X: " + X)
 
 # Forma alternativa para imprimir y/o insertar un valor numérico dentro de un string
-nombre = 'Bob Esponja'
-Edad = 25
+nombre = 'Bob Toronja'
+Edad = 32
 print(f"El alumno {nombre} tiene {Edad} años")
 print("El alumno " + nombre + " tiene " + str(Edad) + " años")
 
@@ -53,6 +53,17 @@ print("El alumno " + nombre + " tiene " + str(Edad) + " años")
 Millonada = 6_325_412.32563215 # Se pueden escribir _ para separar los miles, el número se imprimirá normal
 Millonada_formateado = "{:,}".format(Millonada)
 print(f'Número con separador de miles: {Millonada_formateado}')
+
+# Extraer datos del diccionario
+edad = dicc['Edad'] # Extraer el valor de la clave 'Edad'
+print(f"La edad de {dicc['Nombre']} es {edad} años.") # Imprimir el valor
+
+edad = dicc.get('Edad') # Usar .get() para extraer la edad
+print(f"La edad de {dicc['Nombre']} es {edad} años.") # Imprimir el valor
+
+# Intentar acceder a una clave que no existe
+altura = dicc.get('Altura', 'No especificada')  # 'No especificada' es un valor por defecto
+print(f"La altura de {dicc['Nombre']} es {altura}.")
 
 # Operaciones Básicas
 # Suma
