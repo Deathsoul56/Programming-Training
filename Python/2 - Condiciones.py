@@ -5,7 +5,7 @@ try:
     x = int(input("Ingrese un número entero: "))
 except ValueError:
     print("Por favor, ingrese un número entero válido.")
-    exit()
+    exit() # Terminar Programa
 
 # Verificar si un número es par o impar
 if x % 2 == 0:                       # Si Condicion a cumplir
