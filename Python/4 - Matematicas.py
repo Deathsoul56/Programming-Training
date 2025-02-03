@@ -97,7 +97,7 @@ print(f'Maximo comun divisor {lista} = {np.gcd.reduce(lista)}')     # Maximo com
 x = np.linspace(- 5, 5, 50) # Crear un vector que empieza en -5, termina en 5 y tiene 50 elementos equidistantes
 y = np.exp(x)
 
-plt.plot(x, y, label='exp(x)') # Crear el gráfico de una funcion
+plt.plot(x, y, label='exp(x)', color='#9c1182', linestyle='--', linewidth=2) # Crear el gráfico de una funcion
 
 # Agregar etiquetas y título al gráfico
 plt.xlabel('x')
@@ -112,7 +112,7 @@ plt.grid() # El grafico tiene cuadriculas
 
 plt.show() # Mostrar el gráfico
 
-# Grafico de puntos
+# Grafico de puntos (Scatterplot)
 x = np.random.randint(-100, 101, size = 50) # Vector de numeros aleatorios entre -100 y 100
 y = np.random.randint(-100, 101, size = 50)
 plt.scatter(x, y, label = 'Datos dispersos')
@@ -127,6 +127,17 @@ plt.grid()
 
 plt.show() 
 
+# Scatterplot con colormap
+x = np.random.rand(100)
+y = np.random.rand(100)
+colores = np.random.rand(100)
+
+plt.scatter(x, y, c=colores, cmap='viridis')
+plt.colorbar(label='Intensidad')
+
+plt.title('Scatterplot con colormap')
+plt.show()
+
 # Grafico de Barras
 categorias = np.array(['Rojo', 'Azul', 'Verde', 'Amarillo', 'Blanco'])
 valores = np.array([23, 45, 56, 78, 33])
@@ -139,6 +150,14 @@ plt.xlabel('Categorías')
 plt.ylabel('Valores')
 plt.title('Gráfico de barras')
 plt.legend()
+plt.show()
+
+# Grafico de Torta
+etiquetas = ['Rojo', 'Azul', 'Verde', 'Amarillo']
+valores = [15, 30, 45, 10]
+
+plt.pie(valores, labels=etiquetas, autopct='%1.1f%%', startangle=90)
+plt.title('Gráfico de torta')
 plt.show()
 
 # Histograma
