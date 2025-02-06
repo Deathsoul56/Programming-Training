@@ -38,11 +38,10 @@ match x % 3:
 y = 5
 
 if x > y:
-    print("x es mayor que y")
     if x % 2 == 0:
-        print("x es par")
+        print("x es mayor que y ademas de que x es par")
     else:
-        print("x es impar")
+        print("x es mayor que y ademas de que x es impar")
 else:
     print("x es menor o igual que y")
 

@@ -20,6 +20,7 @@ dicc = {'Nombre': 'Bob Esponja',
         'Cursos': ['Calculo', 'Algebra', 'Ingles']}          # Diccionario
 Nulo = None # Esto es un valor nulo
 
+print("\n--- Tipo de Variables ---")
 print("Esto es un entero", x, type(x))
 print("Esto es un flotante", y, type(y))
 print("Esto es un complejo", z, type(z))
@@ -31,6 +32,7 @@ print("Esto es un conjunto", set, type(set))
 print("Esto es un diccionario", dicc, type(dicc))
 print("Esto es un nulo", Nulo, type(Nulo))
 
+print("\n--- Estructura del Lenguaje Python ---")
 # Una variable puede cambiar de tipo (tipado dinámico)
 A = 2.27
 print(A, type(A))
@@ -65,6 +67,7 @@ print(f"La edad de {dicc['Nombre']} es {edad} años.") # Imprimir el valor
 altura = dicc.get('Altura', 'No especificada')  # 'No especificada' es un valor por defecto
 print(f"La altura de {dicc['Nombre']} es {altura}.")
 
+print("\n--- Operaciones Básicas ---")
 # Operaciones Básicas
 # Suma
 print(6 + 5, type(6 + 5))              # Int + Int = Int
@@ -107,7 +110,7 @@ print(1 + 2, "Suma de adición")
 print("1" + "2", "Suma de concatenar")
 
 # Operaciones Comparación
-print("Operadores de Comparación")
+print("\n--- Operadores de Comparación ---")
 Op1 = 23
 Op2 = 57
 
@@ -122,7 +125,7 @@ print(f"Es {Op1} es entero", type(Op1) is int, "Es: ")
 print(f"Es {Op1} no es entero", type(Op1) is not int, "No es: ")
 
 # Algebra Booleana
-print("Operaciones Lógicas")
+print("\n--- Operaciones Lógicas ---")
 t = True
 f = False
 t2 = True
@@ -133,6 +136,8 @@ print("Valor de t ∧ f", t and f)        # Conjunción Lógica (y)
 print("Valor de t ∧ t2", t and t2)
 print("Valor de t ∨ f", t or f)         # Disyunción Lógica (o)
 
+
+print("\n--- Cambio Tipos de Variable ---")
 # Cambio de tipo de variable (Type Cast)
 # Transformar una variable a Int
 print("Transformar a Int")
@@ -154,6 +159,7 @@ print("La variable es:", X, "y su tipo:", type(X))
 X = float(X)
 print("La variable es:", X, "y su tipo:", type(X))
 
+print("\n--- Ingreso de Datos ---")
 # Ingresar un valor de forma manual
 valor = input("Ingrese su valor aqui: ")
 print(f"En valor es: {valor} Y es de tipo {type(valor)}")  # Siempre será un string
@@ -172,6 +178,7 @@ x //= 3 # x ahora es 5
 x %= 3  # x ahora es 2
 x **= 3 # x ahora es 8
 
+print("\n--- Metodos para string ---")
 # Funciones para string
 mi_string = 'cazuEla'
 print(len(mi_string), "Largo de mi string")

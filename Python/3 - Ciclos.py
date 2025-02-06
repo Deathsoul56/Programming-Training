@@ -1,5 +1,6 @@
 # Ciclos
 
+print("\n--- Ciclo While ---")
 # Tipo While
 x = -3 
 while x <= 10: # Ciclo while que imprime valores de x desde -3 hasta 10
@@ -15,6 +16,7 @@ while True: # while infinito
     else:
         print("Ciclo infinito")
 
+print("\n--- Ciclo For ---")
 # Ciclos for
 
 # Avanzar por un rango
@@ -54,6 +56,7 @@ for i in range(-1, 5):
         print(f"Error: No se puede dividir 10 entre {i} (división por cero).")
         continue  # Continuar con la siguiente iteración
 
+print("\n--- Ciclos Anidados ---")
 # Ciclos Anidados
 numeros = [1, 2, 3]
 letras = ['a', 'b', 'c']
