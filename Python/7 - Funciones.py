@@ -2,26 +2,28 @@
 
 # 1. Función básica sin parámetros
 def saludar():
+    """Imprime un mensaje de bienvenida."""
     print("¡Hola, bienvenido al curso de Python!")
 
 # 2. Función con parámetros
 def funcion (x):
     return x + 5
 
-# 3.
+# 3. Funcion con varios parametros
 def funcion2 (x, y):
     z = x - y   # Las variables que se crean en una funcion solo exsiten en la funcion
     return z
 
 # 4. Función con múltiples valores de retorno
 def calcular_estadisticas(numeros):
+    """Calcula la suma, promedio, máximo y mínimo de una lista de números."""
     suma = sum(numeros)
     promedio = suma / len(numeros)
     maximo = max(numeros)
     minimo = min(numeros)
     return suma, promedio, maximo, minimo
 
-# Funcion que devuelve el caracter mas repetido de un String
+# 5. Funcion que devuelve el caracter mas repetido de un String
 def caracter_mas_repetido(cadena):
     if not cadena:
         return None
@@ -52,7 +54,7 @@ if __name__ == '__main__':
 
     vector = [15, 23, 20, 11, 9, 16, 15, 22, 30, 17]
     suma, promedio, max_num, min_num = calcular_estadisticas(vector)
-    print(f"Suma: {suma}, Promedio: {promedio}, Máximo: {max_num}, Mínimo: {min_num}")
+    print(f"Suma: {suma}, Promedio: {promedio:.2f}, Máximo: {max_num}, Mínimo: {min_num}")
     print(f'Estadisticas: {calcular_estadisticas(vector)}')
 
     x = "Mi nombre es Máximo decimo Meridio, comandante de los ejércitos del norte, general de las legiones Félix. leal, sirviente del único emperador Marco Aurelio, padre de un hijo asesinado, esposo de una esposa asesinada. Y juro que me vengaré. en esta vida o en la otra."
