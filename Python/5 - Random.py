@@ -1,6 +1,8 @@
 import numpy as np
 
 # Números Pseudo-Aleatorios
+print("--- Números Pseudo-Aleatorios ---")
+
 aleatorio = np.random.random() # Numero aleatorio entre 0 y 1
 print(f'Número aleatorio entre 0 y 1: {aleatorio}')
 
@@ -27,6 +29,8 @@ v = np.random.choice(vector)
 print(f'El vector v = {vector} se escoge al azar un valor {v}')
 
 # Permutaciones
+print("\n --- Permutaciones ---")
+
 lista = np.array(["rojo", "verde", "azul", "amarillo", "rosa", "violeta", "blanco", "negro"])
 print(f'Lista Original = {lista}')
 np.random.shuffle(lista) # Funciones para revolver un array
@@ -38,6 +42,8 @@ permutacion = np.random.permutation(secuencia) # Generamos una permutación alea
 print(f"Permutación aleatoria: {permutacion}")
 
 #Simllas
+print("\n --- Semillas ---")
+
 rs = np.random.RandomState(seed=42) # Crear un generador de números aleatorios con una semilla específica<
 
 random_number = rs.rand() # Generar un número aleatorio entre 0 y 1
@@ -63,6 +69,8 @@ print(f"Número aleatorio después de inicializar la semilla: {random_number_aft
 
 
 # Distribuciones de probabilidad continuas
+print("\n --- Distribuciones de Probabilidad Continuas ---")
+
 # Distribución Normal
 mu = 5 # Media
 sd = 8 # Desviación Estándar
@@ -276,7 +284,9 @@ print(f'Valor aleatorio con distribución Lomax alpha: {alpha} lambda: {1} = {Lo
 Lomax = np.random.pareto(a = alpha, size = 10) # Vector aleatorio con distribución Lomax (alpha, lambda = 1)
 print(f'Vector aleatorio con distribución Lomax alpha: {alpha} lambda: {1} = {Lomax}')
 
-# Distribuciones de probabilidad discretas
+# Distribuciones de probabilidad Discretas
+print("\n --- Distribuciones de Probabilidad Discretas ---")
+
 # Distribución Binomial
 N = 10 # Cantidad de intentos
 Prop = 0.25 # Probabilidad de existo
@@ -341,7 +351,9 @@ zipf = np.random.zipf(a = alpha, size = 10) # Vector aleatorio con distribución
 print(f'Vector aleatorio con distribución zipf alpha: {alpha} = {zipf}')
 
 
-# Distribuciones de probabilidad conjuntas
+# Distribuciones de Probabilidad Conjuntas
+print("\n --- Distribuciones de Probabilidad Conjuntas ---")
+
 # Distribución Normal
 vmu = np.array([3, 6, 7]) # Vector de Medias
 mcov = np.array([[10, 2, 6], [2, 9, -3], [6, -3, 7]]) # Matriz de Covarainzas
