@@ -8,6 +8,7 @@ se indicando el inicio con =begin
 y el final con =end
 =end
 
+puts "\n--- Tipos de Datos ---"
 x = 123                             # Int
 y = 3.14                            # Float
 z = Complex(5.25, 12)               # Complex 
@@ -31,29 +32,43 @@ print "Esto es un Rango: " , range, " ", range.class, "\n"
 print "Esto es un Hash: " , persona, " ", persona.class, "\n"
 
 # Una variable puede cambiar de tipo (tipado dinámico)
+puts "\n--- Tipado Dinámico ---"
 texto = 2.27
 print "Nueva valor de texto: ", texto, " ", texto.class, "\n"
 
 # Función para saber si una variable pertenece a cierto tipo
+puts "\n--- Verificación de Tipos ---"
 print "A es un float ", texto.is_a?(Float), "\n"
 print "A es un String ", texto.is_a?(String), "\n"
+print "Es entero usando instance_of?: #{x.instance_of?(Integer)}\n"
 
 # Ruby es Case Sensitive, diferencia mayúsculas de minúsculas
+puts "\n--- Case Sensitivity ---"
 X = "73"  # Variable tipo string
 print "esto es x: " , x, " Esto es X: " + X, "\n"
 
 # Forma alternativa para imprimir y/o insertar un valor numérico dentro de un string
+puts "\n--- Formateo de Strings ---"
 nombre = 'Bob Esponja'
 Edad = 25
 puts "El alumno #{nombre} tiene #{Edad} años"
 print "El alumno " + nombre + " tiene " + String(Edad) + " años", "\n"
-printf("El alumno %s tiene %s años\n", nombre, Edad)
+printf("El alumno %s tiene %s años\n", nombre, Edad) # print con f-string
 
 # Representacion de miles
+puts "\n--- Formateo de Números ---"
 Millonada = 6_325_412.32563215 # Se pueden escribir _ para separar los miles, el número se imprimirá normal
 puts "Numero con separador de miles: #{Millonada}"
 
+puts "\n--- Operaciones con Hash ---"
+edad = persona[:edad]  # Extraer el valor usando símbolo
+puts "La edad de #{persona[:nombre]} es #{edad} años."
+altura = persona.fetch(:altura, 'No especificada')  # Con valor por defecto
+puts "La altura de #{persona[:nombre]} es #{altura}."
+
 # Operaciones Básicas
+puts "\n--- Operaciones Básicas ---"
+
 # Suma
 puts "6 + 5 = #{6 + 5} #{(6 + 5).class}"                 # Int + Int = Int
 puts "#{x} + 33 = #{x + 33} #{(x + 33).class}"
@@ -78,6 +93,13 @@ puts "#{x} / 33 = #{x / 33} #{(x / 33).class}"
 puts "#{x} / #{y} = #{x / y} #{(x / y).class}"           # Int / Float = Float
 puts "2.8 / 1.4 = #{2.8 / 1.4} #{(2.8 / 1.4).class}"  # Float / Float = Float
 
+# División Entera
+puts "\n--- División Entera ---"
+puts "5 // 6 = #{5.div(6)} #{(5.div(6)).class}"             # Int // Int = Int
+puts "#{x} // 33 = #{x.div(33)} #{(x.div(33)).class}"
+puts "#{x} // #{y} = #{x.div(y)} #{(x.div(y)).class}"       # Int // Float = Float
+puts "#{2.8} // 1.4 = #{2.8.div(1.4)} #{(2.8.div(1.4)).class}"  # Float // Float = Float
+
 # Modulo
 puts "5 % 6 = #{5 % 6} #{(5 % 6).class}"              # Int % Int = Int
 puts "#{x} % 33 = #{x % 33} #{(x % 33).class}"
@@ -92,7 +114,7 @@ print 1 + 2, " Suma de adición", "\n"
 print "1" + "2", " Concatenación de cadenas", "\n"
 
 # Operaciones Comparación
-puts "Operadores de Comparación"
+puts "\n--- Operadores de Comparación ---"
 Op1 = 23
 Op2 = 57
 
@@ -107,6 +129,7 @@ puts "Es #{Op1} es entero: #{Op1.is_a?(Integer)}"
 puts "Es #{Op1} no es entero: #{!(Op1.is_a?(Integer))}"
 
 # Álgebra Booleana
+puts "\n--- Álgebra Booleana ---"
 t = true
 f = false
 t2 = true
@@ -118,6 +141,8 @@ puts "Valor de t ∧ t2: #{t && t2}"
 puts "Valor de t ∨ f: #{t || f}"    # Disyunción Lógica (o)
 
 # Cambio de tipo de variable (Type Cast)
+puts "\n--- Conversión de Tipos (Type Cast) ---"
+
 # Transformar una variable a Int
 puts "Transformar a Int"
 puts "La variable era: #{X} y su tipo: #{X.class}"
@@ -139,6 +164,7 @@ x = x.to_f
 puts "La variable es: #{x} y su tipo: #{x.class}"
 
 # Ingresar un valor de forma manual
+puts "\n--- Entrada de Usuario ---"
 print "Ingrese su valor aqui: "
 valor = gets.chomp
 puts "El valor es: #{valor} y es de tipo: #{valor.class}"  # Siempre será un string
@@ -148,6 +174,7 @@ x = x + 1 # El valor x se le asigna su sucesor
 x += 1    # Forma acortada, todas las operaciones tienen su forma acortada
 
 # Operaciones Acortadas
+puts "\n--- Operadores de Asignación Compuesta ---"
 x = 30
 x += 5  # x ahora es 35
 x -= 3  # x ahora es 32
@@ -157,8 +184,10 @@ x = x.to_i  # Convertimos a entero para el operador de división entera
 x /= 3  # x ahora es 5
 x %= 3  # x ahora es 2
 x **= 3 # x ahora es 8
+puts "Valor final de x: #{x}"
 
 # Funciones para string
+puts "\n--- Métodos de String ---"
 mi_string = 'cazuEla'
 puts "#{mi_string.length} Largo de mi string"
 puts "#{mi_string.index('z')} Posición de la z en mi string, si se repiten se devuelve la menor posición"

@@ -102,3 +102,91 @@ matriz.each_with_index do |fila, fila_idx|
     puts "  Columna #{columna_idx}: #{valor}"
   end
 end
+
+# Times iterator (específico de Ruby)
+puts "\n--- Times Iterator ---"
+5.times do |i|
+  puts "Iteración #{i}"
+end
+
+# Upto y Downto (específico de Ruby)
+puts "\n--- Upto y Downto ---"
+1.upto(5) do |i|
+  puts "Contando hacia arriba: #{i}"
+end
+
+5.downto(1) do |i|
+  puts "Contando hacia abajo: #{i}"
+end
+
+# Step (similar a range con paso en Python)
+puts "\n--- Step ---"
+(0..10).step(2) do |i|
+  puts "Contando de 2 en 2: #{i}"
+end
+
+# Until (opuesto al while)
+puts "\n--- Until ---"
+contador = 0
+until contador >= 5 do
+  puts "Contador: #{contador}"
+  contador += 1
+end
+
+# Each_slice (para procesar elementos en grupos)
+puts "\n--- Each_slice ---"
+(1..6).each_slice(2) do |grupo|
+  puts "Grupo: #{grupo}"
+end
+
+# Select (similar a filter en Python)
+puts "\n--- Select ---"
+numeros = (1..10).to_a
+pares = numeros.select { |num| num.even? }
+puts "Números pares: #{pares}"
+
+# Map (similar a map en Python)
+puts "\n--- Map ---"
+cuadrados = numeros.map { |num| num * num }
+puts "Cuadrados: #{cuadrados}"
+
+# Each_with_object (acumulador)
+puts "\n--- Each_with_object ---"
+resultado = (1..5).each_with_object({}) do |i, hash|
+  hash[i] = i * i
+end
+puts "Hash de cuadrados: #{resultado}"
+
+# Manejo de errores más detallado
+puts "\n--- Manejo de Errores Detallado ---"
+[-2, -1, 0, 1, 2].each do |divisor|
+  begin
+    resultado = 10 / divisor
+    puts "10 / #{divisor} = #{resultado}"
+  rescue ZeroDivisionError
+    puts "No se puede dividir por cero"
+  rescue StandardError => e
+    puts "Error inesperado: #{e.message}"
+  else
+    puts "División exitosa"
+  ensure
+    puts "Proceso completado para #{divisor}"
+  end
+end
+
+# Ciclos con case (switch)
+puts "\n--- Case en Ciclos ---"
+['A', 'B', 'C', 'D', 'F'].each do |nota|
+  case nota
+  when 'A'
+    puts "Excelente"
+  when 'B'
+    puts "Bien"
+  when 'C'
+    puts "Regular"
+  when 'D'
+    puts "Suficiente"
+  else
+    puts "Reprobado"
+  end
+end
