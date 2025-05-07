@@ -7,6 +7,7 @@ except ValueError:
     print("Por favor, ingrese un número entero válido.")
     exit() # Terminar Programa
 
+print("\n--- Condicional Simple ---")
 # Verificar si un número es par o impar
 if x % 2 == 0:                       # Si Condicion a cumplir
     print(f"El numero {x} es par")   # Valor si es verdadero
@@ -16,6 +17,7 @@ else:                                # En caso contrario
 # Forma alternativa
 print(f"{x} es par") if x % 2 == 0 else print(f"{x} es impar")
 
+print("\n--- Condicional Múltiple ---")
 # Verificar múltiples condiciones con elif
 if x % 3 == 0:                                              # Si condicion a cumplir
     print(f"El valor {x} es equivalente a 0 en modulo 3")   # Valor si es verdadero
@@ -24,8 +26,8 @@ elif x % 3 == 1:                                            # Pero si segunda co
 else:                                                       # En caso contrario
     print(f"El valor {x} es equivalente a 2 en modulo 3")   # Valor si no cumple ninguna condicion
 
-
-# Forma alternativa, usar match-case para manejar múltiples condiciones (Python 3.10+)
+print("\n--- Match-Case (Python 3.10+) ---")
+# Forma alternativa, usar match-case para manejar múltiples condiciones
 match x % 3:
     case 0:
         print(f"El valor {x} es equivalente a 0 en modulo 3")
@@ -34,6 +36,7 @@ match x % 3:
     case 2:
         print(f"El valor {x} es equivalente a 2 en modulo 3")
 
+print("\n--- Condicionales Anidados ---")
 # If anidados
 y = 5
 
@@ -45,7 +48,7 @@ if x > y:
 else:
     print("x es menor o igual que y")
 
-
+print("\n--- Operadores Lógicos ---")
 # If con operadores logicos
 z = 15
 if x > y and x < z:
@@ -63,7 +66,7 @@ if x > y or x > z:
 if not x == y:
     print("x no es igual a y")
 
-
+print("\n--- Funciones Any y All ---")
 # Uso de any y all
 condiciones = [x > y, x < z, x % 2 == 0]
 if all(condiciones):
@@ -71,7 +74,7 @@ if all(condiciones):
 if any(condiciones):
     print("Al menos una condición se cumple")
 
-
+print("\n--- Diccionarios como Alternativa ---")
 # Uso de diccionarios para mapear condiciones
 acciones = {
     0: "El valor es equivalente a 0 en modulo 3",
@@ -80,7 +83,7 @@ acciones = {
 }
 print(acciones.get(x % 3, "Valor no encontrado"))
 
-
+print("\n--- Manejo de Excepciones ---")
 # Condicion de Intentar
 n1 = 10
 n2 = 3

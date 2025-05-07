@@ -3,7 +3,7 @@
 # 1. Función básica sin parámetros
 def saludar():
     """Imprime un mensaje de bienvenida."""
-    print("¡Hola, bienvenido al curso de Python!")
+    print("¡Hola, bienvenido la clase de funciones de Python!")
 
 # 2. Función con parámetros
 def funcion (x):
