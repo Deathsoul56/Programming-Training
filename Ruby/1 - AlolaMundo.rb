@@ -1,206 +1,208 @@
-puts "Alola Mundo Ruby" # Imprimir un mensaje
+# =============================================================================
+# CLASE 1: ALOLA MUNDO RUBY
+#
+# Esta clase cubre los conceptos fundamentales en Ruby:
+# 1. Características del lenguaje y comentarios
+# 2. Variables, tipos de datos y comprobación
+# 3. Formateo y Hash (Diccionarios)
+# 4. Operaciones aritméticas, lógicas y de comparación
+# 5. Conversión de tipos y entrada de usuario
+# 6. Métodos útiles de Strings y Operadores
+# =============================================================================
 
+puts "=== CLASE 1: ALOLA MUNDO RUBY ===\n\n"
+
+# =============================================================================
+# 1. CARACTERÍSTICAS DEL LENGUAJE Y COMENTARIOS
+# =============================================================================
+
+puts "1. CARACTERÍSTICAS DEL LENGUAJE Y COMENTARIOS"
+puts "=" * 40
+
+puts "\n--- Comentarios en Ruby ---"
 # Los comentarios en ruby de una línea se hacen con el signo de gato #
+puts "Los comentarios de una línea usan #"
 
 =begin
 Los comentarios largos de varias líneas 
 se indicando el inicio con =begin
 y el final con =end
 =end
+puts "Los comentarios multilínea usan =begin y =end"
+
+puts "\n--- Case Sensitivity ---"
+# Ruby es Case Sensitive, diferencia mayúsculas de minúsculas
+x = 23
+X = "73"  # Variable tipo string
+puts "Variable x minúscula: #{x}"
+puts "Variable X mayúscula: #{X}"
+puts "¡Son variables completamente diferentes!"
+
+# =============================================================================
+# 2. VARIABLES, TIPOS DE DATOS Y ESTRUCTURAS BÁSICAS
+# =============================================================================
+
+puts "\n2. VARIABLES Y TIPOS DE DATOS BÁSICOS"
+puts "=" * 40
 
 puts "\n--- Tipos de Datos ---"
-x = 123                             # Int
+x = 123                             # Int (Integer)
 y = 3.14                            # Float
 z = Complex(5.25, 12)               # Complex 
 texto = "Cadena"                    # String
 arreglo = [1, 't', 3.1, "a", 5]     # Array
-b = true                            # Booleanos
+b = true                            # Boolean
 n = nil                             # Nil
-range = 1..9                        # Rangos
-persona = { nombre: "Juan", "edad" => 25, :ciudad => "Ejemplo" }       #Hash
-# Vemos que en un Hash los valores se pueden asignar con : o con =>
+range = 1..9                        # Range
+persona = { nombre: "Juan", "edad" => 25, :ciudad => "Ejemplo" } # Hash
 
-puts "Tipos de datos"
-print "Esto es un entero: " , x, " ", x.class, "\n"
-print "Esto es un Float: " , y, " ", y.class, "\n"
-print "Esto es un Complejo: " , z, " ", z.class, "\n"
-print "Esto es un String: " , texto, " ", texto.class, "\n"
-print "Esto es un Array: " , arreglo, " ", arreglo.class, "\n"
-print "Esto es un Booleano: " , b, " ", b.class, "\n"
-print "Esto es un Nil: " , n, " ", n.class, "\n"
-print "Esto es un Rango: " , range, " ", range.class, "\n"
-print "Esto es un Hash: " , persona, " ", persona.class, "\n"
+# Imprimir los tipos
+printf("%-15s %-30s %s\n", "Categoría", "Valor", "Clase (Type)")
+printf("%-15s %-30s %s\n", "Entero:", x, x.class)
+printf("%-15s %-30s %s\n", "Float:", y, y.class)
+printf("%-15s %-30s %s\n", "Complejo:", z, z.class)
+printf("%-15s %-30s %s\n", "String:", texto, texto.class)
+printf("%-15s %-30s %s\n", "Array:", arreglo.to_s, arreglo.class)
+printf("%-15s %-30s %s\n", "Boolean:", b, b.class)
+printf("%-15s %-30s %s\n", "Nil:", n.inspect, n.class)
+printf("%-15s %-30s %s\n", "Rango:", range, range.class)
+printf("%-15s %-30s %s\n", "Hash:", persona.to_s, persona.class)
 
-# Una variable puede cambiar de tipo (tipado dinámico)
 puts "\n--- Tipado Dinámico ---"
+# Una variable puede cambiar de tipo (tipado dinámico)
+texto_original = texto
 texto = 2.27
-print "Nueva valor de texto: ", texto, " ", texto.class, "\n"
+puts "La variable 'texto' ha cambiado de: '#{texto_original}' a #{texto} (#{texto.class})"
 
-# Función para saber si una variable pertenece a cierto tipo
 puts "\n--- Verificación de Tipos ---"
-print "A es un float ", texto.is_a?(Float), "\n"
-print "A es un String ", texto.is_a?(String), "\n"
-print "Es entero usando instance_of?: #{x.instance_of?(Integer)}\n"
+# Función para saber si una variable pertenece a cierto tipo
+puts "¿Es 'texto' un Float? -> #{texto.is_a?(Float)}"
+puts "¿Es 'texto' un String? -> #{texto.is_a?(String)}"
+puts "¿Es 'x' una instancia Integer pura? -> #{x.instance_of?(Integer)}"
 
-# Ruby es Case Sensitive, diferencia mayúsculas de minúsculas
-puts "\n--- Case Sensitivity ---"
-X = "73"  # Variable tipo string
-print "esto es x: " , x, " Esto es X: " + X, "\n"
+# =============================================================================
+# 3. FORMATEO Y ESTRUCTURAS HASH
+# =============================================================================
 
-# Forma alternativa para imprimir y/o insertar un valor numérico dentro de un string
+puts "\n3. FORMATEO Y ESTRUCTURAS HASH"
+puts "=" * 40
+
 puts "\n--- Formateo de Strings ---"
 nombre = 'Bob Esponja'
 Edad = 25
-puts "El alumno #{nombre} tiene #{Edad} años"
-print "El alumno " + nombre + " tiene " + String(Edad) + " años", "\n"
-printf("El alumno %s tiene %s años\n", nombre, Edad) # print con f-string
+puts "1. Usando Interpolación (Recomendado): El alumno #{nombre} tiene #{Edad} años"
+puts "2. Usando Concatenación (+): El alumno " + nombre + " tiene " + String(Edad) + " años"
+printf("3. Usando Printf (Estilo C): El alumno %s tiene %s años\n", nombre, Edad)
 
-# Representacion de miles
-puts "\n--- Formateo de Números ---"
-Millonada = 6_325_412.32563215 # Se pueden escribir _ para separar los miles, el número se imprimirá normal
-puts "Numero con separador de miles: #{Millonada}"
+puts "\n--- Formateo de Números Grandes ---"
+Millonada = 6_325_412.32563215 
+# Se pueden escribir _ para separar los miles, el compilador los ignora
+puts "Numero definido con separadores de miles (_): #{Millonada}"
 
-puts "\n--- Operaciones con Hash ---"
-edad = persona[:edad]  # Extraer el valor usando símbolo
-puts "La edad de #{persona[:nombre]} es #{edad} años."
-altura = persona.fetch(:altura, 'No especificada')  # Con valor por defecto
-puts "La altura de #{persona[:nombre]} es #{altura}."
+puts "\n--- Operaciones con Hash (Diccionarios) ---"
+# En un Hash los valores se pueden asignar con : o con =>
+edad_hash = persona[:edad]  # Extraer el valor
+puts "La edad de #{persona[:nombre]} es #{edad_hash} años."
+altura = persona.fetch(:altura, 'No especificada')  # Con valor default preventivo
+puts "La altura de #{persona[:nombre]} es: #{altura}."
 
-# Operaciones Básicas
-puts "\n--- Operaciones Básicas ---"
+# =============================================================================
+# 4. OPERACIONES ARITMÉTICAS, LÓGICAS Y DE COMPARACIÓN
+# =============================================================================
 
-# Suma
-puts "6 + 5 = #{6 + 5} #{(6 + 5).class}"                 # Int + Int = Int
-puts "#{x} + 33 = #{x + 33} #{(x + 33).class}"
-puts "#{x} + #{y} = #{x + y} #{(x + y).class}"           # Int + Float = Float
-puts "2.8 + 1.4 = #{2.8 + 1.4} #{(2.8 + 1.4).class}"  # Float + Float = Float
+puts "\n4. OPERACIONES ARITMÉTICAS, LÓGICAS Y DE COMPARACIÓN"
+puts "=" * 40
 
-# Resta
-puts "6 - 5 = #{6 - 5} #{(6 - 5).class}"                 # Int - Int = Int
-puts "#{x} - 33 = #{x - 33} #{(x - 33).class}"
-puts "#{x} - #{y} = #{x - y} #{(x - y).class}"           # Int - Float = Float
-puts "2.8 - 1.4 = #{2.8 - 1.4} #{(2.8 - 1.4).class}"  # Float - Float = Float
+puts "\n--- Operaciones Aritméticas Básicas ---"
+puts "Suma:               #{x} + #{y} = #{x + y}"
+puts "Resta:              #{x} - #{y} = #{x - y}"
+puts "Multiplicación:     #{x} * #{y} = #{x * y}"
+puts "División:           5 / 6 = #{5 / 6} (Int / Int devuelve Int truncado)"
+puts "División Precisa:   5 / 6.0 = #{5 / 6.0} (Si hay float, hay precisión)"
+puts "División Entera:    5.div(6) = #{5.div(6)}"
+puts "Módulo:             5 % 6 = #{5 % 6}"
 
-# Multiplicación
-puts "6 * 5 = #{6 * 5} #{(6 * 5).class}"                 # Int * Int = Int
-puts "#{x} * 33 = #{x * 33} #{(x * 33).class}"
-puts "#{x} * #{y} = #{x * y} #{(x * y).class}"           # Int * Float = Float
-puts "2.8 * 1.4 = #{2.8 * 1.4} #{(2.8 * 1.4).class}"  # Float * Float = Float
-
-# División
-puts "5 / 6 = #{5 / 6} #{(5 / 6).class}"             # Int / Int = Int
-puts "#{x} / 33 = #{x / 33} #{(x / 33).class}"
-puts "#{x} / #{y} = #{x / y} #{(x / y).class}"           # Int / Float = Float
-puts "2.8 / 1.4 = #{2.8 / 1.4} #{(2.8 / 1.4).class}"  # Float / Float = Float
-
-# División Entera
-puts "\n--- División Entera ---"
-puts "5 // 6 = #{5.div(6)} #{(5.div(6)).class}"             # Int // Int = Int
-puts "#{x} // 33 = #{x.div(33)} #{(x.div(33)).class}"
-puts "#{x} // #{y} = #{x.div(y)} #{(x.div(y)).class}"       # Int // Float = Float
-puts "#{2.8} // 1.4 = #{2.8.div(1.4)} #{(2.8.div(1.4)).class}"  # Float // Float = Float
-
-# Modulo
-puts "5 % 6 = #{5 % 6} #{(5 % 6).class}"              # Int % Int = Int
-puts "#{x} % 33 = #{x % 33} #{(x % 33).class}"
-puts "#{x} % #{y} = #{x % y} #{(x % y).class}"        # Int % Float = Float
-puts "#{2.8} % 1.4 = #{2.8 % 1.4} #{(2.8 % 1.4).class}"  # Float % Float = Float
-
-# Hay que tener cuidado operando con float, vemos que a veces hay falta de precisión
-# para asegurarnos que el resultado de una división será un float podemos forzar 5/2.0
-
-# Como vimos el signo + cambio su función según los parámetros que entreguen
-print 1 + 2, " Suma de adición", "\n"
-print "1" + "2", " Concatenación de cadenas", "\n"
-
-# Operaciones Comparación
 puts "\n--- Operadores de Comparación ---"
 Op1 = 23
 Op2 = 57
+puts "¿#{Op1} > #{Op2}?  #{Op1 > Op2} (Mayor estricto)"
+puts "¿#{Op1} < #{Op2}?  #{Op1 < Op2} (Menor estricto)"
+puts "¿#{Op1} >= 23? #{Op1 >= 23} (Mayor o igual)"
+puts "¿44 <= #{Op2}? #{44 <= Op2} (Mayor o igual)"
+puts "¿#{Op1} == #{Op2}? #{Op1 == Op2} (Igual a)"
+puts "¿#{Op1} != #{Op2}? #{Op1 != Op2} (Distinto a)"
 
-puts "Es #{Op1} > #{Op2}: #{Op1 > Op2} (Mayor estricto)"
-puts "Es #{Op1} < #{Op2}: #{Op1 < Op2} (Menor estricto)"
-puts "Es #{Op1} >= 23: #{Op1 >= 23} (Mayor o igual)"
-puts "Es 44 <= #{Op2}: #{44 <= Op2} (Mayor o igual)"
-puts "Es #{Op1} = #{Op2}: #{Op1 == Op2} Igual a"
-puts "Es #{Op2} = 57: #{Op2 == 57}"
-puts "Es #{Op1} != #{Op2}: #{Op1 != Op2} Distinto a"
-puts "Es #{Op1} es entero: #{Op1.is_a?(Integer)}"
-puts "Es #{Op1} no es entero: #{!(Op1.is_a?(Integer))}"
-
-# Álgebra Booleana
-puts "\n--- Álgebra Booleana ---"
+puts "\n--- Operaciones Lógicas (Álgebra Booleana) ---"
 t = true
 f = false
 t2 = true
 
 puts "Valor de t: #{t}"
-puts "Valor de ~t: #{!t}"           # Negación Lógica (~)
-puts "Valor de t ∧ f: #{t && f}"    # Conjunción Lógica (y)
-puts "Valor de t ∧ t2: #{t && t2}"
-puts "Valor de t ∨ f: #{t || f}"    # Disyunción Lógica (o)
+puts "Valor de !t: #{!t} (Negación Lógica NOT)"
+puts "Valor de t && f: #{t && f} (Conjunción Lógica AND)"
+puts "Valor de t || f: #{t || f} (Disyunción Lógica OR)"
 
-# Cambio de tipo de variable (Type Cast)
-puts "\n--- Conversión de Tipos (Type Cast) ---"
+# =============================================================================
+# 5. CONVERSIÓN DE TIPOS Y ENTRADA DE USUARIO
+# =============================================================================
 
-# Transformar una variable a Int
-puts "Transformar a Int"
-puts "La variable era: #{X} y su tipo: #{X.class}"
-X = X.to_i
-puts "La variable es: #{X} y su tipo: #{X.class}" # Cuando se aplica a un numero que estaba como string se conserva
-puts "La variable era: #{y} y su tipo: #{y.class}"
-puts "La variable es: #{y.to_i} y su tipo: #{(y.to_i).class}" # Cuando se aplica a un float solo se toma la parte entera
+puts "\n5. CONVERSIÓN DE TIPOS Y ENTRADA DE USUARIO"
+puts "=" * 40
 
-# Transformar una variable a String
-puts "Transformar a String"
-puts "La variable es: #{y} y su tipo: #{y.class}"
-y = y.to_s
-puts "La variable es: #{y} y su tipo: #{y.class}"
+puts "\n--- Conversión de Tipos (Type Casting) ---"
+puts "\nTransformar a Entero (.to_i):"
+puts "X string inicial: '#{X}' -> convertido a: #{X.to_i}" 
+puts "y float inicial: #{y} -> convertido a: #{y.to_i} (Se trunca el decimal)"
 
-# Transformar una variable a Float
-puts "Transformar a Float"
-puts "La variable es: #{x} y su tipo: #{x.class}"
-x = x.to_f
-puts "La variable es: #{x} y su tipo: #{x.class}"
+puts "\nTransformar a String (.to_s):"
+puts "y numérico: #{y} -> convertido a string: '#{y.to_s}'"
 
+puts "\nTransformar a Float (.to_f):"
+puts "x entero: #{x} -> convertido a float: #{x.to_f}"
+
+puts "\n--- Entrada de datos del usuario ---"
 # Ingresar un valor de forma manual
-puts "\n--- Entrada de Usuario ---"
 print "Ingrese su valor aqui: "
 valor = gets.chomp
-puts "El valor es: #{valor} y es de tipo: #{valor.class}"  # Siempre será un string
+puts "El valor ingresado es: '#{valor}'"
+puts "Este valor siempre entra como clase: #{valor.class}"
 
-# Incrementar valores
-x = x + 1 # El valor x se le asigna su sucesor
-x += 1    # Forma acortada, todas las operaciones tienen su forma acortada
+# =============================================================================
+# 6. MÉTODOS ÚTILES Y OPERADORES DE ASIGNACIÓN
+# =============================================================================
 
-# Operaciones Acortadas
+puts "\n6. MÉTODOS ÚTILES DE STRINGS Y ASIGNADORES"
+puts "=" * 40
+
 puts "\n--- Operadores de Asignación Compuesta ---"
-x = 30
-x += 5  # x ahora es 35
-x -= 3  # x ahora es 32
-x *= 2  # x ahora es 64
-x /= 4  # x ahora es 16.0
-x = x.to_i  # Convertimos a entero para el operador de división entera
-x /= 3  # x ahora es 5
-x %= 3  # x ahora es 2
-x **= 3 # x ahora es 8
-puts "Valor final de x: #{x}"
+# Incrementar valores de manera abreviada
+var_op = 30
+puts "Valor inicial: #{var_op}"
+var_op += 5  ; puts "+= 5  -> #{var_op}"
+var_op -= 3  ; puts "-= 3  -> #{var_op}"
+var_op *= 2  ; puts "*= 2  -> #{var_op}"
+var_op /= 4  ; puts "/= 4  -> #{var_op}"
+var_op %= 3  ; puts "%= 3  -> #{var_op}"
+var_op **= 3 ; puts "**= 3 -> #{var_op}"
 
-# Funciones para string
-puts "\n--- Métodos de String ---"
+puts "\n--- Métodos potentes para Strings ---"
 mi_string = 'cazuEla'
-puts "#{mi_string.length} Largo de mi string"
-puts "#{mi_string.index('z')} Posición de la z en mi string, si se repiten se devuelve la menor posición"
-puts "#{mi_string.capitalize} Primer carácter en mayúsculas"
-puts "#{mi_string.upcase} Todo el string en mayúsculas"
-puts "#{mi_string.downcase} Todo el string en minúsculas"
-puts "#{mi_string.match?(/\A\d+\z/)} Devuelve verdadero si es un número, falso en caso contrario"
-puts "#{mi_string.match?(/\A[a-zA-Z]+\z/)} Devuelve verdadero si el string solo contiene letras, falso en caso contrario"
-puts "#{mi_string.match?(/\A\w+\z/)} Devuelve verdadero si el string solo contiene alpha numéricos, falso en caso contrario"
-puts "#{mi_string.count('a')} Cuanta todas las a que contiene"
-puts "#{mi_string.gsub('z', 'ss')} Remplaza todas las z por ss"
-puts "#{mi_string * 3} Se imprime el string 3 veces"
+puts "String original: '#{mi_string}'"
 
+puts "Largo (.length): #{mi_string.length}"
+puts "Posición de 'z' (.index): #{mi_string.index('z')}"
+puts "Capitalizar (.capitalize): '#{mi_string.capitalize}'"
+puts "Mayúsculas (.upcase): '#{mi_string.upcase}'"
+puts "Minúsculas (.downcase): '#{mi_string.downcase}'"
+puts "Reemplazar (.gsub): '#{mi_string.gsub('z', 'ss')}'"
+puts "Multiplicador de strings (* 3): '#{mi_string * 3}'"
+
+puts "\nComprobaciones Regex Directas (.match?):"
+puts "¿Solo números?: #{mi_string.match?(/\A\d+\z/)}"
+puts "¿Solo letras?: #{mi_string.match?(/\A[a-zA-Z]+\z/)}"
+puts "¿Contar letras 'a' (.count): #{mi_string.count('a')}"
+
+puts "\n--- Despedida ---"
 linea1 = "**********************"
 linea2 = "*                    *"
 linea3 = "*       Adios!       *"
@@ -209,3 +211,25 @@ puts linea2
 puts linea3
 puts linea2
 puts "*" * 22
+
+# =============================================================================
+# CONCLUSIONES
+# =============================================================================
+
+puts "\n=================================================="
+puts "CONCLUSIONES SOBRE ALOLA MUNDO Y RUBY BÁSICO"
+puts "=================================================="
+
+puts "\n1. TODO ES UN OBJETO:"
+puts "   • En Ruby el paradigma de objetos es radical. Todos los datos, hasta los números primitivos, son objetos con métodos propios y clases (por ejemplo 5.div(2))."
+
+puts "\n2. STRINGS E INTERPOLACIÓN:"
+puts "   • Ruby brilla en el formateo de strings usando el formato nativo \#{variable} que evalúa código arbitrario incrustado dentro del texto."
+
+puts "\n3. LOS BLOQUES HASH (DICCIONARIOS):"
+puts "   • Los diccionarios en Ruby, llamados Hashes, son poderosos y usan símbolos especiales (:nombre) para acceder a memoria más eficientemente que usando strings normales (\"nombre\")."
+
+puts "\n4. SIMPLICIDAD MATEMÁTICA Y CASTEO:"
+puts "   • Modificar un tipo de base a otro es tan simple como pedirle al objeto convertirse usando los métodos estándar como `.to_i`, `.to_f` y `.to_s`."
+
+puts "\n=== FIN DE LA CLASE 1 ===\n"
