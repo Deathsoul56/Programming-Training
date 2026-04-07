@@ -8,9 +8,6 @@ Esta clase cubre los conceptos fundamentales de condiciones en Python:
 4. Operadores lógicos y funciones any() / all()
 5. Diccionarios como alternativa a condiciones
 6. Manejo de excepciones (try-except)
-
-Autor: Rafael
-Fecha: Agosto 2024
 """
 
 print("=== CLASE 2: CONDICIONES Y ESTRUCTURAS DE CONTROL ===\n")

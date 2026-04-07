@@ -8,9 +8,6 @@ Esta clase cubre los conceptos fundamentales de ciclos en Python:
 4. Ciclos anidados
 5. Optimización de ciclos
 6. Manejo de errores en ciclos
-
-Autor: Rafael
-Fecha: Agosto 2024
 """
 
 print("=== CLASE 3: CICLOS EN PYTHON ===\n")

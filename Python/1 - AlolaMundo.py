@@ -7,9 +7,6 @@ Esta clase cubre los conceptos fundamentales en Python:
 3. Operaciones aritméticas y lógicas
 4. Conversión de tipos de datos
 5. Métodos útiles para strings
-
-Autor: Rafael
-Fecha: Agosto 2024
 """
 
 print("=== CLASE 1: ALOLA MUNDO PYTHON ===\n")
